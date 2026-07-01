@@ -42,6 +42,7 @@ REQUIRED_FILES = [
     "examples/neoth-babel-event.example.json",
     "examples/neoth-babel-window.example.json",
     "assets/delta-cosmology-overview.svg",
+    "assets/delta-cosmology-hero-v3.svg",
     "assets/rdelta-framework-map.svg",
     "assets/babel-index-pipeline.svg",
     "assets/claim-boundary.svg",
@@ -145,6 +146,7 @@ def validate_json(failures: list[str]) -> None:
 def validate_svg(failures: list[str]) -> None:
     for rel_path in [
         "assets/delta-cosmology-overview.svg",
+        "assets/delta-cosmology-hero-v3.svg",
         "assets/rdelta-framework-map.svg",
         "assets/babel-index-pipeline.svg",
         "assets/claim-boundary.svg",

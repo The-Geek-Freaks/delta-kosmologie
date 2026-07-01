@@ -5,9 +5,9 @@ turning the framework into a black box.
 
 ## README Overview
 
-![Delta Cosmology overview](../assets/delta-cosmology-overview.svg)
+![Delta Cosmology hero](../assets/delta-cosmology-hero-v3.svg)
 
-The README overview is the short public-facing map: framework, empirical score,
+The README hero is the short public-facing map: framework, empirical score,
 engineering probe, and scientific boundary in one screen.
 
 ## Framework Map

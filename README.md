@@ -9,7 +9,7 @@
 **A preformal framework for recursion, difference, Babel dynamics, and
 instrumented LLM/agent-system collapse prediction.**
 
-![Delta Cosmology overview](assets/delta-cosmology-overview.svg)
+![Delta Cosmology hero](assets/delta-cosmology-hero-v3.svg)
 
 Delta Cosmology, originally **Delta-Kosmologie**, is a research framework around
 the co-dependence of **recursion** and **difference**. Its practical branch is

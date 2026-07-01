@@ -18,6 +18,7 @@ It also contains the generated social-preview raster expected by GitHub:
 Core explanatory diagrams are tracked as SVG:
 
 - `assets/delta-cosmology-overview.svg`
+- `assets/delta-cosmology-hero-v3.svg`
 - `assets/rdelta-framework-map.svg`
 - `assets/babel-index-pipeline.svg`
 - `assets/claim-boundary.svg`
