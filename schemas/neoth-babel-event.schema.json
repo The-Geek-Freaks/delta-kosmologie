@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/The-Geek-Freaks/delta-kosmologie/schemas/neoth-babel-event.schema.json",
+  "title": "NEOTH Babel Telemetry Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "timestamp",
+    "run_id",
+    "event_type"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "inference_start",
+        "inference_end",
+        "tool_call_start",
+        "tool_call_end",
+        "agent_spawn",
+        "agent_end",
+        "fallback_attempt",
+        "fallback_result",
+        "context_boundary",
+        "retry",
+        "error",
+        "collapse_label"
+      ]
+    },
+    "model": {
+      "type": "string"
+    },
+    "tool": {
+      "type": "string"
+    },
+    "tokens_in": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tokens_out": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "latency_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "queue_depth": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "context_used_ratio": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "success": {
+      "type": "boolean"
+    },
+    "error_kind": {
+      "type": "string"
+    },
+    "collapse_label": {
+      "type": "string",
+      "enum": [
+        "agent_loop",
+        "retry_storm",
+        "tool_timeout_cascade",
+        "context_limit_failure",
+        "fallback_failure",
+        "semantic_degradation",
+        "objective_failure"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "integer",
+          "string",
+          "boolean",
+          "null"
+        ]
+      }
+    }
+  }
+}
