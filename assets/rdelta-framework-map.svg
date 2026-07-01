@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Delta Cosmology RDelta framework map</title>
+  <desc id="desc">A diagram linking recursion, difference, the Babel Index, NEOTH, and falsifiable telemetry tests.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#101827"/>
+      <stop offset="1" stop-color="#082f49"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172033"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="72" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="44" font-weight="700">Delta Cosmology</text>
+  <text x="70" y="112" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22">RDelta preformalism, Babel Index, and NEOTH runtime telemetry</text>
+  <rect x="70" y="172" width="260" height="132" rx="16" fill="url(#card)" stroke="#334155"/>
+  <text x="100" y="218" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">Difference</text>
+  <text x="100" y="252" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">Distinction, boundary,</text>
+  <text x="100" y="276" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">productive separability</text>
+  <rect x="70" y="356" width="260" height="132" rx="16" fill="url(#card)" stroke="#334155"/>
+  <text x="100" y="402" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">Recursion</text>
+  <text x="100" y="436" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">Memory, return,</text>
+  <text x="100" y="460" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">stabilized iteration</text>
+  <rect x="438" y="256" width="318" height="150" rx="18" fill="#042f2e" stroke="#14b8a6"/>
+  <text x="484" y="315" fill="#f0fdfa" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">RDelta</text>
+  <text x="484" y="354" fill="#ccfbf1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">Recursion and difference as</text>
+  <text x="484" y="380" fill="#ccfbf1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">co-conditions of observable structure</text>
+  <rect x="856" y="122" width="270" height="132" rx="16" fill="url(#card)" stroke="#334155"/>
+  <text x="886" y="168" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">Babel Index</text>
+  <text x="886" y="202" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">Loss of productive</text>
+  <text x="886" y="226" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">difference in a domain</text>
+  <rect x="856" y="314" width="270" height="132" rx="16" fill="url(#card)" stroke="#334155"/>
+  <text x="886" y="360" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">NEOTH Probe</text>
+  <text x="886" y="394" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">Async telemetry over</text>
+  <text x="886" y="418" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">LLM/agent orchestration</text>
+  <rect x="856" y="500" width="270" height="74" rx="16" fill="#172554" stroke="#60a5fa"/>
+  <text x="886" y="544" fill="#dbeafe" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Nested falsification</text>
+  <line x1="330" y1="238" x2="438" y2="304" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="330" y1="422" x2="438" y2="356" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="756" y1="312" x2="856" y2="202" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="756" y1="350" x2="856" y2="380" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="990" y1="446" x2="990" y2="500" stroke="#38bdf8" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="70" y="586" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">github.com/The-Geek-Freaks/delta-kosmologie  |  github.com/The-Geek-Freaks/NEOTH</text>
+</svg>
