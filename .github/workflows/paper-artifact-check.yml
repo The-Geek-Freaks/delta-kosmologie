@@ -27,3 +27,5 @@ jobs:
           test -s assets/social-preview.png
           test -s codemeta.json
           test -s llms.txt
+          test -s wiki/Home.md
+          test -s wiki/_Sidebar.md

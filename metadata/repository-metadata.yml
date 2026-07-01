@@ -6,11 +6,25 @@ repository:
   description: "Open RDelta/Babel Index framework for LLM agents and world-systems: detect context degeneration, agent loops, tool fragility, and collapse with NEOTH."
   homepage: "https://the-geek-freaks.github.io/delta-kosmologie/"
   source_repository: "https://github.com/The-Geek-Freaks/delta-kosmologie"
+  wiki: "https://github.com/The-Geek-Freaks/delta-kosmologie/wiki"
+  wiki_source: "wiki/"
+  wiki_sync_workflow: ".github/workflows/sync-wiki.yml"
   deepwiki: "https://deepwiki.com/The-Geek-Freaks/delta-kosmologie"
   neoth_testbed: "https://github.com/The-Geek-Freaks/NEOTH"
   social_preview: "assets/social-preview.png"
   social_preview_source: "assets/social-preview.svg"
   primary_language: "Markdown"
+  wiki_pages:
+    - Home
+    - Quick-Start
+    - Framework-Map
+    - Babel-Index
+    - NEOTH-Pilot
+    - Falsification-Standard
+    - Visual-Guide
+    - Repository-Map
+    - DeepWiki
+    - Glossary
   recommended_topics:
     - llm-agents
     - ai-agents

@@ -5,6 +5,7 @@
 ## Canonical Links
 
 - Repository: https://github.com/The-Geek-Freaks/delta-kosmologie
+- GitHub Wiki: https://github.com/The-Geek-Freaks/delta-kosmologie/wiki
 - Pages: https://the-geek-freaks.github.io/delta-kosmologie/
 - DeepWiki: https://deepwiki.com/The-Geek-Freaks/delta-kosmologie
 - NEOTH testbed: https://github.com/The-Geek-Freaks/NEOTH
@@ -15,6 +16,7 @@
 - Overview: docs/overview.md
 - Framework map: docs/framework-map.md
 - Visual guide: docs/visual-guide.md
+- Wiki index: docs/wiki.md
 - Full paper: paper/delta-cosmology-v1.0.md
 - NEOTH integration: docs/neoth-integration.md
 - Pilot protocol: protocols/pilot-b-neoth.md

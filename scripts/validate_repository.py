@@ -16,6 +16,7 @@ from typing import Iterable
 ROOT = Path(__file__).resolve().parents[1]
 NEOTH_URL = "https://github.com/The-Geek-Freaks/NEOTH"
 DELTA_REPO_URL = "https://github.com/The-Geek-Freaks/delta-kosmologie"
+WIKI_URL = "https://github.com/The-Geek-Freaks/delta-kosmologie/wiki"
 PAGES_URL = "https://the-geek-freaks.github.io/delta-kosmologie/"
 DEEPWIKI_URL = "https://deepwiki.com/The-Geek-Freaks/delta-kosmologie"
 
@@ -31,6 +32,7 @@ REQUIRED_FILES = [
     "docs/neoth-integration.md",
     "docs/neoth-discovery-bridge.md",
     "docs/repository-settings.md",
+    "docs/wiki.md",
     "paper/delta-cosmology-v1.0.md",
     "paper/delta-cosmology-v1.0.html",
     "paper/delta-kosmologie-v1.0.pdf",
@@ -50,6 +52,20 @@ REQUIRED_FILES = [
     "assets/social-preview.png",
     "metadata/repository-metadata.yml",
     "metadata/repository-topics.txt",
+    ".github/workflows/sync-wiki.yml",
+    "scripts/publish_wiki.py",
+    "wiki/Home.md",
+    "wiki/_Sidebar.md",
+    "wiki/_Footer.md",
+    "wiki/Quick-Start.md",
+    "wiki/Framework-Map.md",
+    "wiki/Babel-Index.md",
+    "wiki/NEOTH-Pilot.md",
+    "wiki/Falsification-Standard.md",
+    "wiki/Visual-Guide.md",
+    "wiki/Repository-Map.md",
+    "wiki/DeepWiki.md",
+    "wiki/Glossary.md",
 ]
 
 
@@ -226,6 +242,51 @@ def validate_deepwiki_links(failures: list[str]) -> None:
             failures.append(f"Missing DeepWiki link in {rel_path}")
 
 
+def validate_wiki_links(failures: list[str]) -> None:
+    surfaces = [
+        "README.md",
+        "docs/index.html",
+        "docs/repository-settings.md",
+        "docs/wiki.md",
+        "metadata/repository-metadata.yml",
+        "llms.txt",
+        "codemeta.json",
+    ]
+    for rel_path in surfaces:
+        if WIKI_URL not in read(rel_path):
+            failures.append(f"Missing GitHub Wiki link in {rel_path}")
+
+
+def validate_wiki_source(failures: list[str]) -> None:
+    wiki_dir = ROOT / "wiki"
+    pages = {path.stem for path in wiki_dir.glob("*.md")}
+    for required in [
+        "Home",
+        "_Sidebar",
+        "_Footer",
+        "Quick-Start",
+        "Framework-Map",
+        "Babel-Index",
+        "NEOTH-Pilot",
+        "Falsification-Standard",
+        "Visual-Guide",
+        "Repository-Map",
+        "DeepWiki",
+        "Glossary",
+    ]:
+        if required not in pages:
+            failures.append(f"Missing wiki source page: wiki/{required}.md")
+
+    wiki_link_pattern = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
+    for path in wiki_dir.glob("*.md"):
+        text = path.read_text(encoding="utf-8")
+        for match in wiki_link_pattern.finditer(text):
+            label, target = match.groups()
+            page = target or label
+            if page not in pages:
+                failures.append(f"{path.relative_to(ROOT)} links missing wiki page: {page}")
+
+
 def validate_codemeta(failures: list[str], topics: list[str]) -> None:
     data = load_json("codemeta.json")
     if not isinstance(data, dict):
@@ -330,6 +391,8 @@ def main() -> int:
     topics = validate_topics(failures)
     validate_neoth_backlinks(failures)
     validate_deepwiki_links(failures)
+    validate_wiki_links(failures)
+    validate_wiki_source(failures)
     validate_codemeta(failures, topics)
     validate_html_head(failures)
     validate_examples(failures)

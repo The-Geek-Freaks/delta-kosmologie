@@ -31,6 +31,12 @@ DeepWiki:
 https://deepwiki.com/The-Geek-Freaks/delta-kosmologie
 ```
 
+GitHub Wiki:
+
+```text
+https://github.com/The-Geek-Freaks/delta-kosmologie/wiki
+```
+
 ## Topics
 
 Recommended GitHub topics:
@@ -102,3 +108,4 @@ Keep these files in sync with repository settings:
 - [../codemeta.json](../codemeta.json)
 - [../metadata/repository-metadata.yml](../metadata/repository-metadata.yml)
 - [../metadata/repository-topics.txt](../metadata/repository-topics.txt)
+- [wiki.md](wiki.md)

@@ -4,6 +4,7 @@
 [![Repository quality](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/markdown-hygiene.yml/badge.svg)](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/markdown-hygiene.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC--BY--4.0-lightgrey.svg)](LICENSE)
 [![NEOTH testbed](https://img.shields.io/badge/testbed-NEOTH-blue.svg)](https://github.com/The-Geek-Freaks/NEOTH)
+[![GitHub Wiki](https://img.shields.io/badge/wiki-GitHub-0366d6.svg)](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki)
 [![DeepWiki](https://img.shields.io/badge/DeepWiki-Delta%20Cosmology-7c3aed.svg)](https://deepwiki.com/The-Geek-Freaks/delta-kosmologie)
 
 **A preformal framework for recursion, difference, Babel dynamics, and
@@ -69,6 +70,7 @@ This is the core anti-hype rule:
 | --- | --- |
 | Fast conceptual overview | [docs/overview.md](docs/overview.md) |
 | Visual overview | [docs/visual-guide.md](docs/visual-guide.md) |
+| Curated GitHub Wiki | [GitHub Wiki](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki) |
 | DeepWiki project reader | [DeepWiki project reader](https://deepwiki.com/The-Geek-Freaks/delta-kosmologie) |
 | Full Markdown reader edition | [paper/delta-cosmology-v1.0.md](paper/delta-cosmology-v1.0.md) |
 | HTML reader edition | [paper/delta-cosmology-v1.0.html](paper/delta-cosmology-v1.0.html) |
@@ -93,7 +95,9 @@ This is the core anti-hype rule:
 | `assets/` | SVG diagrams, pipeline maps, and social-preview assets |
 | `metadata/` | Suggested GitHub repository metadata and topics |
 | `scripts/` | Local repository validation |
+| `wiki/` | Versioned source pages for the GitHub Wiki |
 | `.github/` | CI, issue templates, contribution hygiene |
+| GitHub Wiki | Curated reader pages for framework, protocol, visuals, and glossary |
 
 ## NEOTH As The First Runtime Probe
 
@@ -122,8 +126,8 @@ python scripts/validate_repository.py
 ```
 
 The check covers required artifacts, local links, JSON metadata, SVG
-well-formedness, example telemetry shape, NEOTH backlinks, and GitHub topic
-consistency.
+well-formedness, example telemetry shape, wiki page links, NEOTH backlinks,
+DeepWiki backlinks, and GitHub topic consistency.
 
 ## Keywords
 
