@@ -1,14 +1,14 @@
-# Paper Artifacts
+# Paper
 
-This directory contains the public paper snapshot:
+This directory contains the repository reader editions and artifact notes:
 
-- `delta-kosmologie-v1.0.pdf`: canonical PDF artifact.
-- `delta-kosmologie-v1.0.txt`: text extracted from the PDF for search, review,
-  and diff-friendly inspection.
+- `delta-cosmology-v1.0.md`: English Markdown reader edition.
+- `delta-cosmology-v1.0.html`: English HTML reader edition.
+- `delta-kosmologie-v1.0.txt`: English repository excerpt and search text.
 
-The PDF is the visual reference artifact. The extracted text is a convenience
-copy and may lose layout, tables, page breaks, mathematical spacing, or special
-glyph fidelity.
+The canonical PDF artifact was generated locally and is tracked in the prepared
+workspace ZIP. Uploading the binary PDF to GitHub still requires normal Git push
+or release-asset upload access.
 
 ## Status
 
