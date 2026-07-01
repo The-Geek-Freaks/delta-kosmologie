@@ -11,6 +11,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check paper artifacts
         run: |
+          test -s paper/delta-cosmology-v1.0.md
+          test -s paper/delta-cosmology-v1.0.html
           test -s paper/delta-kosmologie-v1.0.txt
           test -s protocols/pilot-b-neoth.md
           test -s schemas/neoth-babel-event.schema.json
+          test -s assets/rdelta-framework-map.svg
