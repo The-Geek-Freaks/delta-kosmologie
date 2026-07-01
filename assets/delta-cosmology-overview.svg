@@ -28,7 +28,8 @@
       .card-title { font: 850 30px Inter, Segoe UI, Arial, sans-serif; fill: #f8fafc; }
       .body { font: 400 17px Inter, Segoe UI, Arial, sans-serif; fill: #dbeafe; }
       .muted { font: 400 15px Inter, Segoe UI, Arial, sans-serif; fill: #94a3b8; }
-      .mono { font: 700 19px Consolas, "SFMono-Regular", Menlo, monospace; fill: #a7f3d0; }
+      .mono { font: 700 17px Consolas, "SFMono-Regular", Menlo, monospace; fill: #a7f3d0; }
+      .micro { font: 500 13px Inter, Segoe UI, Arial, sans-serif; fill: #94a3b8; }
       .card { fill: #101827; stroke: #334155; stroke-width: 1.4; }
       .edge { stroke: #67e8f9; stroke-width: 4; fill: none; marker-end: url(#arrow); }
     </style>
@@ -66,9 +67,10 @@
   <text x="518" y="280" class="body">Detect loss of productive</text>
   <text x="518" y="308" class="body">difference before visible</text>
   <text x="518" y="336" class="body">runtime collapse.</text>
-  <rect x="518" y="374" width="242" height="58" rx="16" fill="#042f2e" stroke="#2dd4bf"/>
-  <text x="540" y="410" class="mono">B = norm((C*K*M*A*V)/(D*H))</text>
-  <text x="518" y="464" class="muted">Must beat raw telemetry and null models.</text>
+  <rect x="518" y="366" width="246" height="76" rx="16" fill="#042f2e" stroke="#2dd4bf"/>
+  <text x="540" y="397" class="mono">B = norm((C*K*M*A*V)</text>
+  <text x="592" y="424" class="mono">/ (D*H + eps))</text>
+  <text x="518" y="466" class="muted">Must beat raw telemetry controls.</text>
 
   <rect x="906" y="168" width="316" height="292" rx="26" fill="url(#test)" stroke="#818cf8" filter="url(#shadow)"/>
   <text x="940" y="212" class="eyebrow">ENGINEERING PROBE</text>
@@ -82,8 +84,9 @@
   <path d="M374 314 H482" class="edge"/>
   <path d="M798 314 H906" class="edge"/>
 
-  <rect x="58" y="544" width="1164" height="96" rx="24" fill="#020617" opacity="0.78" stroke="#334155"/>
-  <text x="94" y="580" class="eyebrow">SCIENTIFIC BOUNDARY</text>
-  <text x="94" y="612" class="body">A successful NEOTH pilot validates the local LLM/agent telemetry instrument. It does not prove the full cosmological reading.</text>
-  <text x="94" y="638" class="muted">github.com/The-Geek-Freaks/delta-kosmologie  |  github.com/The-Geek-Freaks/NEOTH  |  deepwiki.com/The-Geek-Freaks/delta-kosmologie</text>
+  <rect x="58" y="526" width="1164" height="128" rx="24" fill="#020617" opacity="0.78" stroke="#334155"/>
+  <text x="94" y="562" class="eyebrow">SCIENTIFIC BOUNDARY</text>
+  <text x="94" y="594" class="body">A successful NEOTH pilot validates the local LLM/agent telemetry instrument.</text>
+  <text x="94" y="620" class="body">It does not prove the full cosmological reading.</text>
+  <text x="94" y="644" class="micro">GitHub: The-Geek-Freaks/delta-kosmologie | NEOTH: The-Geek-Freaks/NEOTH | DeepWiki: project reader</text>
 </svg>
