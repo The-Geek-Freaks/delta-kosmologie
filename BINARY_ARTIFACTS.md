@@ -10,5 +10,10 @@ The current connector path can write repository text files reliably, but the
 terminal GitHub push is blocked and the available GitHub connector does not
 provide a direct release-asset upload flow.
 
-Until binary upload is available, the repository contains a curated text excerpt
-and the full local ZIP remains the canonical transfer artifact.
+The repository now contains English Markdown and HTML reader editions:
+
+- `paper/delta-cosmology-v1.0.md`
+- `paper/delta-cosmology-v1.0.html`
+
+Until binary upload is available, these reader editions are the public paper
+surface and the full local ZIP remains the exact transfer artifact for the PDF.
