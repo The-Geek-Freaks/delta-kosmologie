@@ -9,7 +9,7 @@
 **A preformal framework for recursion, difference, Babel dynamics, and
 instrumented LLM/agent-system collapse prediction.**
 
-![RDelta framework map](assets/rdelta-framework-map.svg)
+![Delta Cosmology overview](assets/delta-cosmology-overview.svg)
 
 Delta Cosmology, originally **Delta-Kosmologie**, is a research framework around
 the co-dependence of **recursion** and **difference**. Its practical branch is
@@ -69,7 +69,7 @@ This is the core anti-hype rule:
 | --- | --- |
 | Fast conceptual overview | [docs/overview.md](docs/overview.md) |
 | Visual overview | [docs/visual-guide.md](docs/visual-guide.md) |
-| DeepWiki project reader | [deepwiki.com/The-Geek-Freaks/delta-kosmologie](https://deepwiki.com/The-Geek-Freaks/delta-kosmologie) |
+| DeepWiki project reader | [DeepWiki project reader](https://deepwiki.com/The-Geek-Freaks/delta-kosmologie) |
 | Full Markdown reader edition | [paper/delta-cosmology-v1.0.md](paper/delta-cosmology-v1.0.md) |
 | HTML reader edition | [paper/delta-cosmology-v1.0.html](paper/delta-cosmology-v1.0.html) |
 | NEOTH telemetry integration | [docs/neoth-integration.md](docs/neoth-integration.md) |

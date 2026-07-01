@@ -3,6 +3,13 @@
 This page collects the core diagrams used to explain Delta Cosmology without
 turning the framework into a black box.
 
+## README Overview
+
+![Delta Cosmology overview](../assets/delta-cosmology-overview.svg)
+
+The README overview is the short public-facing map: framework, empirical score,
+engineering probe, and scientific boundary in one screen.
+
 ## Framework Map
 
 ![RDelta framework map](../assets/rdelta-framework-map.svg)

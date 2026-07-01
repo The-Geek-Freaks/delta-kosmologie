@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Delta Cosmology overview</title>
+  <desc id="desc">A high-level overview of Delta Cosmology: RDelta framework, Babel Index telemetry, NEOTH runtime probe, and falsification boundary.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070a12"/>
+      <stop offset="0.45" stop-color="#101827"/>
+      <stop offset="1" stop-color="#073449"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="test" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#020617" flood-opacity="0.42"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#67e8f9"/>
+    </marker>
+    <style>
+      .title { font: 850 54px Inter, Segoe UI, Arial, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 22px Inter, Segoe UI, Arial, sans-serif; fill: #cbd5e1; }
+      .eyebrow { font: 800 12px Inter, Segoe UI, Arial, sans-serif; fill: #94a3b8; letter-spacing: 0.8px; }
+      .card-title { font: 850 30px Inter, Segoe UI, Arial, sans-serif; fill: #f8fafc; }
+      .body { font: 400 17px Inter, Segoe UI, Arial, sans-serif; fill: #dbeafe; }
+      .muted { font: 400 15px Inter, Segoe UI, Arial, sans-serif; fill: #94a3b8; }
+      .mono { font: 700 19px Consolas, "SFMono-Regular", Menlo, monospace; fill: #a7f3d0; }
+      .card { fill: #101827; stroke: #334155; stroke-width: 1.4; }
+      .edge { stroke: #67e8f9; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1110" cy="80" r="250" fill="#0e7490" opacity="0.18"/>
+  <circle cx="92" cy="622" r="210" fill="#7c3aed" opacity="0.10"/>
+  <path d="M0 590 C210 544 345 690 592 630 C836 572 1012 642 1280 548 L1280 720 L0 720 Z" fill="#14b8a6" opacity="0.10"/>
+
+  <text x="58" y="78" class="title">Delta Cosmology</text>
+  <text x="60" y="116" class="subtitle">RDelta framework, Babel Index telemetry, and NEOTH runtime falsification</text>
+
+  <a href="https://deepwiki.com/The-Geek-Freaks/delta-kosmologie">
+    <rect x="876" y="48" width="344" height="44" rx="22" fill="#1e1b4b" stroke="#8b5cf6"/>
+    <text x="900" y="76" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#ddd6fe">DeepWiki</text>
+    <text x="1000" y="76" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" fill="#c4b5fd">project reader</text>
+  </a>
+
+  <rect x="58" y="168" width="316" height="292" rx="26" class="card" filter="url(#shadow)"/>
+  <text x="92" y="212" class="eyebrow">PREFORMAL FRAMEWORK</text>
+  <text x="92" y="260" class="card-title">RDelta</text>
+  <text x="92" y="302" class="body">Recursion and difference</text>
+  <text x="92" y="330" class="body">as co-conditions of observable</text>
+  <text x="92" y="358" class="body">structure.</text>
+  <rect x="92" y="392" width="118" height="42" rx="12" fill="#0f172a" stroke="#22d3ee"/>
+  <text x="116" y="419" class="mono">R</text>
+  <text x="144" y="419" class="muted">recursion</text>
+  <rect x="226" y="392" width="118" height="42" rx="12" fill="#0f172a" stroke="#2dd4bf"/>
+  <text x="250" y="419" class="mono">Delta</text>
+
+  <rect x="482" y="142" width="316" height="344" rx="30" fill="url(#core)" stroke="#5eead4" filter="url(#shadow)"/>
+  <text x="518" y="188" class="eyebrow" fill="#ccfbf1">EMPIRICAL FEATURE FAMILY</text>
+  <text x="518" y="238" class="card-title">Babel Index</text>
+  <text x="518" y="280" class="body">Detect loss of productive</text>
+  <text x="518" y="308" class="body">difference before visible</text>
+  <text x="518" y="336" class="body">runtime collapse.</text>
+  <rect x="518" y="374" width="242" height="58" rx="16" fill="#042f2e" stroke="#2dd4bf"/>
+  <text x="540" y="410" class="mono">B = norm((C*K*M*A*V)/(D*H))</text>
+  <text x="518" y="464" class="muted">Must beat raw telemetry and null models.</text>
+
+  <rect x="906" y="168" width="316" height="292" rx="26" fill="url(#test)" stroke="#818cf8" filter="url(#shadow)"/>
+  <text x="940" y="212" class="eyebrow">ENGINEERING PROBE</text>
+  <text x="940" y="260" class="card-title">NEOTH</text>
+  <text x="940" y="302" class="body">Observe tools, agents, retries,</text>
+  <text x="940" y="330" class="body">context pressure, fallbacks,</text>
+  <text x="940" y="358" class="body">and task outcomes.</text>
+  <rect x="940" y="392" width="236" height="42" rx="12" fill="#172554" stroke="#60a5fa"/>
+  <text x="966" y="419" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#dbeafe">LOCAL VALIDATION ONLY</text>
+
+  <path d="M374 314 H482" class="edge"/>
+  <path d="M798 314 H906" class="edge"/>
+
+  <rect x="58" y="544" width="1164" height="96" rx="24" fill="#020617" opacity="0.78" stroke="#334155"/>
+  <text x="94" y="580" class="eyebrow">SCIENTIFIC BOUNDARY</text>
+  <text x="94" y="612" class="body">A successful NEOTH pilot validates the local LLM/agent telemetry instrument. It does not prove the full cosmological reading.</text>
+  <text x="94" y="638" class="muted">github.com/The-Geek-Freaks/delta-kosmologie  |  github.com/The-Geek-Freaks/NEOTH  |  deepwiki.com/The-Geek-Freaks/delta-kosmologie</text>
+</svg>

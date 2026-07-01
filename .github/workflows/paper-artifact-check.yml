@@ -18,6 +18,7 @@ jobs:
           test -s schemas/neoth-babel-event.schema.json
           test -s schemas/neoth-babel-window.schema.json
           test -s examples/neoth-babel-event.example.json
+          test -s assets/delta-cosmology-overview.svg
           test -s assets/rdelta-framework-map.svg
           test -s assets/babel-index-pipeline.svg
           test -s assets/claim-boundary.svg
