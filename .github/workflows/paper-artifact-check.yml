@@ -1,0 +1,16 @@
+name: Paper artifact check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check paper artifacts
+        run: |
+          test -s paper/delta-kosmologie-v1.0.txt
+          test -s protocols/pilot-b-neoth.md
+          test -s schemas/neoth-babel-event.schema.json
