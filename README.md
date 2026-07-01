@@ -1,99 +1,125 @@
-# Delta-Kosmologie
+# Delta Cosmology
 
 [![Paper artifact check](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/paper-artifact-check.yml/badge.svg)](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/paper-artifact-check.yml)
 [![Markdown hygiene](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/markdown-hygiene.yml/badge.svg)](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/markdown-hygiene.yml)
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC--BY--4.0-lightgrey.svg)](LICENSE)
+[![NEOTH testbed](https://img.shields.io/badge/testbed-NEOTH-blue.svg)](https://github.com/The-Geek-Freaks/NEOTH)
 
-**RDelta-Praeformalismus: extrinsische dunkle Energie, Randtangenten,
-Innenzeit und AGI als Layerwechsel.**
+**A preformal framework for recursion, difference, Babel dynamics, and
+instrumented LLM/agent-system collapse prediction.**
 
-This repository hosts the public working version of the Delta-Kosmologie paper
-and its empirical test protocols.
+![RDelta framework map](assets/rdelta-framework-map.svg)
 
-The project is intentionally split into two layers:
+Delta Cosmology, originally **Delta-Kosmologie**, is a research framework around
+the co-dependence of **recursion** and **difference**. Its practical branch is
+the **Babel Index**: a domain-specific telemetry model for detecting loss of
+productive differentiation in complex systems.
 
-1. **Paper layer:** a preformal theoretical framework around recursion,
-   difference, inner time, Babel dynamics, and domain-specific index models.
-2. **Instrument layer:** operational protocols that can be tested in bounded
-   technical domains without claiming proof of the cosmological interpretation.
+The first live engineering testbed will be
+[NEOTH](https://github.com/The-Geek-Freaks/NEOTH), an agentic LLM runtime and
+distribution. NEOTH will be used to test whether the Babel Index can predict
+tool-chain fragility, context degeneration, agent loops, timeout cascades, and
+fallback collapse before they become visible failures.
 
-## Paper
+## Why This Repo Exists
 
-- PDF: `paper/delta-kosmologie-v1.0.pdf` *(canonical artifact, staged locally until binary upload/release is available)*
-- Extracted text: [paper/delta-kosmologie-v1.0.txt](paper/delta-kosmologie-v1.0.txt)
-- Paper notes: [paper/README.md](paper/README.md)
+Most AI observability stacks measure local symptoms: latency, token volume,
+errors, retries, cost, and benchmark scores. Delta Cosmology asks a sharper
+systems question:
 
-## Core Claim Boundary
+> Can we measure when an agentic LLM system loses productive difference because
+> coupling, convergence pressure, resource pressure, agent density, and
+> information velocity outrun semantic separation and redundancy?
 
-Delta-Kosmologie is not presented as established physics. The paper separates:
-
-- physical equations with units,
-- dimensionless domain indices,
-- heuristic operators and structural readings.
-
-The Babel index is therefore **not** thermodynamic entropy in joules per kelvin.
-It is a domain-specific, calibrated index family for loss of productive
-difference inside a bounded system.
-
-## NEOTH Pilot
-
-[NEOTH](https://github.com/The-Geek-Freaks/NEOTH) will be used as the first
-agentic LLM runtime for testing the framework's **Pilot Protocol B:
-LLM/agent ecosystems**.
-
-The NEOTH integration is planned as an asynchronous telemetry probe. It must not
-sit in the critical inference path. Its job is to observe runtime events, compute
-rolling Babel-window features, and test whether a structured Babel score provides
-incremental predictive signal for agent failures, loop states, tool fragility,
-context degeneration, and fallback collapse.
-
-See:
-
-- [docs/neoth-integration.md](docs/neoth-integration.md)
-- [protocols/pilot-b-neoth.md](protocols/pilot-b-neoth.md)
-- [protocols/babel-index.md](protocols/babel-index.md)
-
-## Repository Map
-
-| Path | Purpose |
-| --- | --- |
-| `paper/` | Canonical PDF and extracted text snapshot |
-| `docs/` | Explanatory notes and integration design |
-| `protocols/` | Empirical protocols, null models, and falsification criteria |
-| `schemas/` | Machine-readable telemetry/event schemas |
-| `examples/` | Example telemetry windows and expected fields |
-| `.github/` | CI, issue templates, contribution hygiene |
-
-## Babel Index Sketch
-
-For a domain `d`, the paper treats the multiplicative Babel form as one
-candidate engineered feature:
+That question becomes testable through the Babel Index family:
 
 ```text
 B_d(t) = norm_d((C_d * K_d * M_d * A_d * V_d) / (D_d * H_d + epsilon))
 ```
 
-with:
+| Symbol | Meaning | NEOTH runtime proxy |
+| --- | --- | --- |
+| `C_d` | Coupling degree | Tool/agent dependency graph density |
+| `K_d` | Convergence pressure | Output self-similarity, loop proximity |
+| `M_d` | Resource pressure | Queue load, context pressure, timeout pressure |
+| `A_d` | Agent density | Active autonomous sessions and subagents |
+| `V_d` | Information velocity | Requests, tokens, events per rolling window |
+| `D_d` | Differentiation capacity | Role, prompt, and tool-schema separability |
+| `H_d` | Heterarchy/redundancy | Working fallback routes and modular alternatives |
 
-- `C_d`: coupling degree
-- `K_d`: convergence pressure / semantic concentration
-- `M_d`: resource, optimization, or queue pressure
-- `A_d`: autonomous actor or agent density
-- `V_d`: information velocity
-- `D_d`: differentiation capacity / semantic separability
-- `H_d`: heterarchy, redundancy, modularity
+## The Scientific Boundary
 
-The repository treats this as a falsifiable engineered feature, not a magic
-whole-model.
+This repository is deliberately strict about claim levels:
 
-## Falsification Standard
+- The **cosmological reading** is a speculative preformal framework.
+- The **Babel Index** is a domain-specific engineered feature.
+- A successful NEOTH pilot would validate only the local LLM/agent telemetry
+  instrument, not the full cosmological interpretation.
+- The index is useful only if it beats strong null models out of sample.
 
-A strong result requires that a Babel feature provides out-of-sample incremental
-signal after controlling for the raw variables, trivial size/activity metrics,
-and flexible baselines.
+This is the core anti-hype rule:
 
-If `B_d` becomes irrelevant after controlling for `{C,K,M,A,V,D,H}`, the
-specific Babel-ratio structure is falsified for that domain.
+> If `B_d` has no incremental signal after controlling for `{C,K,M,A,V,D,H}`,
+> the Babel-ratio structure is falsified for that domain.
+
+## Start Here
+
+| What you want | Read this |
+| --- | --- |
+| Fast conceptual overview | [docs/overview.md](docs/overview.md) |
+| Full Markdown reader edition | [paper/delta-cosmology-v1.0.md](paper/delta-cosmology-v1.0.md) |
+| HTML reader edition | [paper/delta-cosmology-v1.0.html](paper/delta-cosmology-v1.0.html) |
+| NEOTH telemetry integration | [docs/neoth-integration.md](docs/neoth-integration.md) |
+| NEOTH discovery/backlink plan | [docs/neoth-discovery-bridge.md](docs/neoth-discovery-bridge.md) |
+| Babel Index protocol | [protocols/babel-index.md](protocols/babel-index.md) |
+| Pilot B for LLM/agent runtimes | [protocols/pilot-b-neoth.md](protocols/pilot-b-neoth.md) |
+| Falsification standard | [docs/falsification.md](docs/falsification.md) |
+| Glossary | [docs/glossary.md](docs/glossary.md) |
+| Repository settings and topics | [docs/repository-settings.md](docs/repository-settings.md) |
+
+## Repository Map
+
+| Path | Purpose |
+| --- | --- |
+| `paper/` | Markdown, HTML, and local paper artifact notes |
+| `docs/` | Framework explanation, diagrams, discovery, integration notes |
+| `protocols/` | Empirical protocols, null models, and falsification criteria |
+| `schemas/` | Machine-readable telemetry/event schemas |
+| `examples/` | Example telemetry windows and expected fields |
+| `assets/` | SVG diagrams and social-preview assets |
+| `metadata/` | Suggested GitHub repository metadata and topics |
+| `.github/` | CI, issue templates, contribution hygiene |
+
+## NEOTH As The First Runtime Probe
+
+[NEOTH](https://github.com/The-Geek-Freaks/NEOTH) is the first intended
+real-world testbed for Delta Cosmology's LLM/agent branch.
+
+The integration plan:
+
+1. Observe NEOTH orchestration events asynchronously.
+2. Aggregate rolling windows over inference calls, tool calls, retries,
+   fallback attempts, context pressure, agent activity, and outcomes.
+3. Compute raw features `{C,K,M,A,V,D,H}`.
+4. Compute candidate Babel variants.
+5. Test whether `B_NEOTH` predicts failures beyond raw telemetry features.
+
+The goal is not mysticism. The goal is operational early warning for complex
+agent systems.
+
+## Keywords
+
+`llm-agents`, `ai-agents`, `agentic-ai`, `ai-observability`,
+`agent-observability`, `llm-evaluation`, `ai-safety`, `complex-systems`,
+`systems-theory`, `telemetry`, `collapse-prediction`, `babel-index`,
+`rdelta`, `neoth`, `tool-use`, `context-degeneration`, `agent-loops`,
+`semantic-collapse`.
 
 ## Citation
 
 Use [CITATION.cff](CITATION.cff) for citation metadata.
+
+## License
+
+Paper, documentation, protocols, schemas, and examples are licensed under
+[CC BY 4.0](LICENSE), unless a file states otherwise.
