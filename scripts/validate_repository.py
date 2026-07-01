@@ -280,6 +280,12 @@ def validate_wiki_source(failures: list[str]) -> None:
     wiki_link_pattern = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
     for path in wiki_dir.glob("*.md"):
         text = path.read_text(encoding="utf-8")
+        for line_number, line in enumerate(text.splitlines(), start=1):
+            stripped = line.strip()
+            if stripped.startswith("|") and stripped.endswith("|") and "[[" in stripped:
+                failures.append(
+                    f"{path.relative_to(ROOT)}:{line_number} uses GitHub Wiki link syntax inside a table"
+                )
         for match in wiki_link_pattern.finditer(text):
             label, target = match.groups()
             page = target or label

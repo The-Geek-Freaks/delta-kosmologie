@@ -11,14 +11,14 @@ runtime failure modes with NEOTH.
 
 | Need | Page |
 | --- | --- |
-| Fast orientation | [[Quick Start|Quick-Start]] |
-| Conceptual structure | [[Framework Map|Framework-Map]] |
-| Telemetry model | [[Babel Index|Babel-Index]] |
-| NEOTH experiment | [[NEOTH Pilot|NEOTH-Pilot]] |
-| Claim boundaries | [[Falsification Standard|Falsification-Standard]] |
-| Diagrams | [[Visual Guide|Visual-Guide]] |
-| Repository layout | [[Repository Map|Repository-Map]] |
-| External project reader | [[DeepWiki|DeepWiki]] |
+| Fast orientation | [Quick Start](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki/Quick-Start) |
+| Conceptual structure | [Framework Map](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki/Framework-Map) |
+| Telemetry model | [Babel Index](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki/Babel-Index) |
+| NEOTH experiment | [NEOTH Pilot](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki/NEOTH-Pilot) |
+| Claim boundaries | [Falsification Standard](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki/Falsification-Standard) |
+| Diagrams | [Visual Guide](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki/Visual-Guide) |
+| Repository layout | [Repository Map](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki/Repository-Map) |
+| External project reader | [DeepWiki](https://github.com/The-Geek-Freaks/delta-kosmologie/wiki/DeepWiki) |
 
 ## Core Thesis
 
