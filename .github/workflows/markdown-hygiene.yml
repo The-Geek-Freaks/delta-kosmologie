@@ -1,19 +1,21 @@
-name: Markdown hygiene
+name: Repository quality
 
 on:
   push:
   pull_request:
 
 jobs:
-  check-markdown:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run repository validation
+        run: python scripts/validate_repository.py
       - name: Check for empty Markdown files
         run: |
           find . -name "*.md" -type f -print0 | while IFS= read -r -d '' file; do
             test -s "$file"
           done
-      - name: Check important links
-        run: |
-          grep -R "https://github.com/The-Geek-Freaks/NEOTH" README.md docs protocols

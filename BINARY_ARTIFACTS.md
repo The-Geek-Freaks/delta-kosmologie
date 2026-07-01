@@ -1,19 +1,25 @@
 # Binary Artifacts
 
-The canonical PDF was generated locally as:
+This repository package includes the canonical PDF and web-readable editions.
 
 - `paper/delta-kosmologie-v1.0.pdf`
 - local size: 156,910 bytes
-- source ZIP: `delta-kosmologie.zip` in the prepared workspace
 
-The current connector path can write repository text files reliably, but the
-terminal GitHub push is blocked and the available GitHub connector does not
-provide a direct release-asset upload flow.
-
-The repository now contains English Markdown and HTML reader editions:
+The public reader editions are:
 
 - `paper/delta-cosmology-v1.0.md`
 - `paper/delta-cosmology-v1.0.html`
 
-Until binary upload is available, these reader editions are the public paper
-surface and the full local ZIP remains the exact transfer artifact for the PDF.
+It also contains the generated social-preview raster expected by GitHub:
+
+- `assets/social-preview.png`
+- source: `assets/social-preview.svg`
+
+Core explanatory diagrams are tracked as SVG:
+
+- `assets/rdelta-framework-map.svg`
+- `assets/babel-index-pipeline.svg`
+- `assets/claim-boundary.svg`
+
+If a GitHub Release is created, attach the PDF as a release asset and keep the
+Markdown/HTML editions as the canonical in-repository reading surface.

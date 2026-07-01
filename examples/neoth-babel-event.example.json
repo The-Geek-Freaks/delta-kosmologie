@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "timestamp": "2026-07-01T10:03:12Z",
+  "run_id": "neoth-run-2026-07-01-001",
+  "session_id": "session-alpha",
+  "agent_id": "planner-1",
+  "task_id": "pilot-b-window-001",
+  "event_type": "tool_call_end",
+  "model": "gpt-5.3-codex",
+  "tool": "context_search",
+  "tokens_in": 1840,
+  "tokens_out": 320,
+  "latency_ms": 1280,
+  "queue_depth": 2,
+  "context_used_ratio": 0.41,
+  "success": true,
+  "metrics": {
+    "tool_dependency_degree": 0.62,
+    "fallback_route_count": 3,
+    "semantic_similarity_to_prior_turn": 0.27
+  }
+}

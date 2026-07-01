@@ -3,9 +3,13 @@ repository:
   display_name: Delta Cosmology
   owner: The-Geek-Freaks
   visibility: public
-  description: "RDelta preformalism and Babel Index telemetry for predicting collapse in agentic LLM systems, tested with NEOTH."
-  homepage: "https://github.com/The-Geek-Freaks/delta-kosmologie"
-  social_preview: "assets/social-preview.svg"
+  description: "Open RDelta/Babel Index framework for LLM agents and world-systems: detect context degeneration, agent loops, tool fragility, and collapse with NEOTH."
+  homepage: "https://the-geek-freaks.github.io/delta-kosmologie/"
+  source_repository: "https://github.com/The-Geek-Freaks/delta-kosmologie"
+  deepwiki: "https://deepwiki.com/The-Geek-Freaks/delta-kosmologie"
+  neoth_testbed: "https://github.com/The-Geek-Freaks/NEOTH"
+  social_preview: "assets/social-preview.png"
+  social_preview_source: "assets/social-preview.svg"
   primary_language: "Markdown"
   recommended_topics:
     - llm-agents
@@ -26,3 +30,5 @@ repository:
     - context-degeneration
     - agent-loops
     - semantic-collapse
+    - llm-observability
+    - runtime-telemetry

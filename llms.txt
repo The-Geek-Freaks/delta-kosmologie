@@ -1,0 +1,32 @@
+# Delta Cosmology
+
+> RDelta preformalism, Babel Index telemetry, and NEOTH runtime tests for detecting loss of productive difference in complex agentic systems.
+
+## Canonical Links
+
+- Repository: https://github.com/The-Geek-Freaks/delta-kosmologie
+- Pages: https://the-geek-freaks.github.io/delta-kosmologie/
+- DeepWiki: https://deepwiki.com/The-Geek-Freaks/delta-kosmologie
+- NEOTH testbed: https://github.com/The-Geek-Freaks/NEOTH
+- License: CC BY 4.0
+
+## Start Here
+
+- Overview: docs/overview.md
+- Framework map: docs/framework-map.md
+- Visual guide: docs/visual-guide.md
+- Full paper: paper/delta-cosmology-v1.0.md
+- NEOTH integration: docs/neoth-integration.md
+- Pilot protocol: protocols/pilot-b-neoth.md
+- Babel Index protocol: protocols/babel-index.md
+- Falsification standard: docs/falsification.md
+- Telemetry event schema: schemas/neoth-babel-event.schema.json
+- Telemetry window schema: schemas/neoth-babel-window.schema.json
+
+## Keywords
+
+llm-agents, ai-agents, agentic-ai, ai-observability, agent-observability, llm-evaluation, ai-safety, complex-systems, systems-theory, telemetry, collapse-prediction, babel-index, rdelta, neoth, tool-use, context-degeneration, agent-loops, semantic-collapse, llm-observability, runtime-telemetry
+
+## Claim Boundary
+
+Delta Cosmology is a preformal framework and structured hypothesis set. The Babel Index is an empirical feature family. A successful NEOTH pilot validates only the local LLM/agent telemetry instrument unless independent domain evidence supports broader claims.

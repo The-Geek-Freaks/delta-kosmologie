@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Delta Cosmology claim boundary</title>
+  <desc id="desc">Diagram showing which claims a NEOTH pilot can support and which claims remain outside the empirical boundary.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.62" stop-color="#111827"/>
+      <stop offset="1" stop-color="#2f1b46"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#f59e0b"/>
+    </marker>
+    <style>
+      .title { font: 850 44px Inter, Segoe UI, Arial, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 20px Inter, Segoe UI, Arial, sans-serif; fill: #cbd5e1; }
+      .label { font: 800 27px Inter, Segoe UI, Arial, sans-serif; fill: #f8fafc; }
+      .body { font: 400 17px Inter, Segoe UI, Arial, sans-serif; fill: #cbd5e1; }
+      .tiny { font: 800 12px Inter, Segoe UI, Arial, sans-serif; fill: #94a3b8; letter-spacing: 0.6px; }
+      .edge { stroke: #f59e0b; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <circle cx="1060" cy="92" r="210" fill="#8b5cf6" opacity="0.14"/>
+  <circle cx="178" cy="552" r="190" fill="#14b8a6" opacity="0.10"/>
+  <text x="56" y="72" class="title">Claim boundary</text>
+  <text x="58" y="108" class="subtitle">What NEOTH can validate, what remains local, and what stays speculative.</text>
+
+  <rect x="62" y="176" width="306" height="260" rx="24" fill="#18181b" stroke="#52525b"/>
+  <text x="94" y="226" class="tiny">PREFORMAL LAYER</text>
+  <text x="94" y="270" class="label">Cosmological</text>
+  <text x="94" y="304" class="label">reading</text>
+  <text x="94" y="350" class="body">Recursion and difference as</text>
+  <text x="94" y="376" class="body">general conditions of observable</text>
+  <text x="94" y="402" class="body">structure.</text>
+  <rect x="94" y="462" width="242" height="46" rx="14" fill="#3f1d2d" stroke="#fb7185"/>
+  <text x="122" y="491" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#fecdd3">NOT PROVEN BY NEOTH</text>
+
+  <rect x="486" y="150" width="306" height="312" rx="26" fill="#082f49" stroke="#38bdf8"/>
+  <text x="518" y="200" class="tiny">EMPIRICAL INSTRUMENT</text>
+  <text x="518" y="244" class="label">Babel Index</text>
+  <text x="518" y="288" class="body">A domain feature family over</text>
+  <text x="518" y="314" class="body">coupling, convergence, pressure,</text>
+  <text x="518" y="340" class="body">density, velocity, differentiation,</text>
+  <text x="518" y="366" class="body">and redundancy.</text>
+  <rect x="518" y="404" width="238" height="46" rx="14" fill="#042f2e" stroke="#2dd4bf"/>
+  <text x="548" y="433" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#ccfbf1">TESTABLE PER DOMAIN</text>
+
+  <rect x="912" y="176" width="306" height="260" rx="24" fill="#1e1b4b" stroke="#8b5cf6"/>
+  <text x="944" y="226" class="tiny">ENGINEERING TESTBED</text>
+  <text x="944" y="270" class="label">NEOTH pilot</text>
+  <text x="944" y="316" class="body">Telemetry predicts loops, timeout</text>
+  <text x="944" y="342" class="body">cascades, fallback collapse,</text>
+  <text x="944" y="368" class="body">context failures, and task misses.</text>
+  <rect x="944" y="462" width="242" height="46" rx="14" fill="#172554" stroke="#60a5fa"/>
+  <text x="980" y="491" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#dbeafe">LOCAL VALIDATION</text>
+
+  <path d="M368 306 H486" class="edge"/>
+  <path d="M792 306 H912" class="edge"/>
+  <line x1="858" y1="132" x2="858" y2="528" stroke="#fb7185" stroke-width="2" stroke-dasharray="9 9"/>
+  <text x="822" y="554" class="tiny">GENERALIZATION REQUIRES INDEPENDENT DOMAIN EVIDENCE</text>
+
+  <rect x="152" y="548" width="976" height="52" rx="18" fill="#020617" opacity="0.75" stroke="#334155"/>
+  <text x="184" y="581" class="body">Anti-hype rule: a successful NEOTH pilot validates the LLM/agent telemetry instrument, not the whole cosmological ontology.</text>
+</svg>

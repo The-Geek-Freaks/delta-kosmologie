@@ -4,11 +4,12 @@ This directory contains the repository reader editions and artifact notes:
 
 - `delta-cosmology-v1.0.md`: English Markdown reader edition.
 - `delta-cosmology-v1.0.html`: English HTML reader edition.
+- `delta-kosmologie-v1.0.pdf`: canonical local PDF artifact.
 - `delta-kosmologie-v1.0.txt`: English repository excerpt and search text.
 
-The canonical PDF artifact was generated locally and is tracked in the prepared
-workspace ZIP. Uploading the binary PDF to GitHub still requires normal Git push
-or release-asset upload access.
+The canonical PDF artifact is included in the repository package. If a GitHub
+Release is used, attach the PDF as the release asset and keep the Markdown/HTML
+editions as the reviewable source surface.
 
 ## Status
 

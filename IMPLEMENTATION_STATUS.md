@@ -9,14 +9,14 @@
 | HTML reader edition | Ready |
 | SVG framework map | Ready |
 | Social preview asset | Ready |
-| GitHub Actions | Basic artifact and Markdown checks |
+| GitHub Actions | Repository validation and artifact checks |
 | Repository topics/settings | Documented, manual GitHub setting required |
-| PDF artifact | Present locally in workspace ZIP; binary upload still requires normal Git push or release upload |
+| PDF artifact | Present in repository package; attach to a GitHub Release if releases are used |
 
 ## Remaining Manual GitHub Settings
 
-The only repository-quality items that cannot be set through the available
-connector are GitHub metadata fields:
+The only repository-quality items that cannot be represented as normal files are
+GitHub metadata fields:
 
 - About description
 - Website

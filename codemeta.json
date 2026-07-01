@@ -1,0 +1,57 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Delta Cosmology",
+  "codeRepository": "https://github.com/The-Geek-Freaks/delta-kosmologie",
+  "url": "https://the-geek-freaks.github.io/delta-kosmologie/",
+  "license": "https://spdx.org/licenses/CC-BY-4.0",
+  "version": "1.0.0",
+  "dateCreated": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "description": "Open RDelta/Babel Index framework for LLM agents and world-systems: detect context degeneration, agent loops, tool fragility, and collapse with NEOTH.",
+  "programmingLanguage": [
+    "Markdown",
+    "JSON Schema",
+    "HTML"
+  ],
+  "keywords": [
+    "llm-agents",
+    "ai-agents",
+    "agentic-ai",
+    "ai-observability",
+    "agent-observability",
+    "llm-evaluation",
+    "ai-safety",
+    "complex-systems",
+    "systems-theory",
+    "telemetry",
+    "collapse-prediction",
+    "babel-index",
+    "rdelta",
+    "neoth",
+    "tool-use",
+    "context-degeneration",
+    "agent-loops",
+    "semantic-collapse",
+    "llm-observability",
+    "runtime-telemetry"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Alexander",
+      "familyName": "Zuber-Jatzke"
+    }
+  ],
+  "maintainer": {
+    "@type": "Organization",
+    "name": "The-Geek-Freaks",
+    "url": "https://github.com/The-Geek-Freaks"
+  },
+  "relatedLink": [
+    "https://deepwiki.com/The-Geek-Freaks/delta-kosmologie",
+    "https://github.com/The-Geek-Freaks/NEOTH",
+    "https://github.com/The-Geek-Freaks/delta-kosmologie/blob/main/paper/delta-cosmology-v1.0.md",
+    "https://github.com/The-Geek-Freaks/delta-kosmologie/blob/main/protocols/pilot-b-neoth.md"
+  ]
+}

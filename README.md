@@ -1,9 +1,10 @@
 # Delta Cosmology
 
 [![Paper artifact check](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/paper-artifact-check.yml/badge.svg)](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/paper-artifact-check.yml)
-[![Markdown hygiene](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/markdown-hygiene.yml/badge.svg)](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/markdown-hygiene.yml)
+[![Repository quality](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/markdown-hygiene.yml/badge.svg)](https://github.com/The-Geek-Freaks/delta-kosmologie/actions/workflows/markdown-hygiene.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC--BY--4.0-lightgrey.svg)](LICENSE)
 [![NEOTH testbed](https://img.shields.io/badge/testbed-NEOTH-blue.svg)](https://github.com/The-Geek-Freaks/NEOTH)
+[![DeepWiki](https://img.shields.io/badge/DeepWiki-Delta%20Cosmology-7c3aed.svg)](https://deepwiki.com/The-Geek-Freaks/delta-kosmologie)
 
 **A preformal framework for recursion, difference, Babel dynamics, and
 instrumented LLM/agent-system collapse prediction.**
@@ -67,6 +68,8 @@ This is the core anti-hype rule:
 | What you want | Read this |
 | --- | --- |
 | Fast conceptual overview | [docs/overview.md](docs/overview.md) |
+| Visual overview | [docs/visual-guide.md](docs/visual-guide.md) |
+| DeepWiki project reader | [deepwiki.com/The-Geek-Freaks/delta-kosmologie](https://deepwiki.com/The-Geek-Freaks/delta-kosmologie) |
 | Full Markdown reader edition | [paper/delta-cosmology-v1.0.md](paper/delta-cosmology-v1.0.md) |
 | HTML reader edition | [paper/delta-cosmology-v1.0.html](paper/delta-cosmology-v1.0.html) |
 | NEOTH telemetry integration | [docs/neoth-integration.md](docs/neoth-integration.md) |
@@ -75,6 +78,7 @@ This is the core anti-hype rule:
 | Pilot B for LLM/agent runtimes | [protocols/pilot-b-neoth.md](protocols/pilot-b-neoth.md) |
 | Falsification standard | [docs/falsification.md](docs/falsification.md) |
 | Glossary | [docs/glossary.md](docs/glossary.md) |
+| Machine-readable project context | [llms.txt](llms.txt) |
 | Repository settings and topics | [docs/repository-settings.md](docs/repository-settings.md) |
 
 ## Repository Map
@@ -86,8 +90,9 @@ This is the core anti-hype rule:
 | `protocols/` | Empirical protocols, null models, and falsification criteria |
 | `schemas/` | Machine-readable telemetry/event schemas |
 | `examples/` | Example telemetry windows and expected fields |
-| `assets/` | SVG diagrams and social-preview assets |
+| `assets/` | SVG diagrams, pipeline maps, and social-preview assets |
 | `metadata/` | Suggested GitHub repository metadata and topics |
+| `scripts/` | Local repository validation |
 | `.github/` | CI, issue templates, contribution hygiene |
 
 ## NEOTH As The First Runtime Probe
@@ -107,13 +112,26 @@ The integration plan:
 The goal is not mysticism. The goal is operational early warning for complex
 agent systems.
 
+## Local Validation
+
+This repository intentionally stays dependency-light. The quality gate uses
+only the Python standard library:
+
+```bash
+python scripts/validate_repository.py
+```
+
+The check covers required artifacts, local links, JSON metadata, SVG
+well-formedness, example telemetry shape, NEOTH backlinks, and GitHub topic
+consistency.
+
 ## Keywords
 
 `llm-agents`, `ai-agents`, `agentic-ai`, `ai-observability`,
 `agent-observability`, `llm-evaluation`, `ai-safety`, `complex-systems`,
 `systems-theory`, `telemetry`, `collapse-prediction`, `babel-index`,
 `rdelta`, `neoth`, `tool-use`, `context-degeneration`, `agent-loops`,
-`semantic-collapse`.
+`semantic-collapse`, `llm-observability`, `runtime-telemetry`.
 
 ## Citation
 

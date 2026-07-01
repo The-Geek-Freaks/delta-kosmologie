@@ -16,4 +16,12 @@ jobs:
           test -s paper/delta-kosmologie-v1.0.txt
           test -s protocols/pilot-b-neoth.md
           test -s schemas/neoth-babel-event.schema.json
+          test -s schemas/neoth-babel-window.schema.json
+          test -s examples/neoth-babel-event.example.json
           test -s assets/rdelta-framework-map.svg
+          test -s assets/babel-index-pipeline.svg
+          test -s assets/claim-boundary.svg
+          test -s assets/social-preview.svg
+          test -s assets/social-preview.png
+          test -s codemeta.json
+          test -s llms.txt

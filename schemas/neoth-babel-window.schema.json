@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/The-Geek-Freaks/delta-kosmologie/schemas/neoth-babel-window.schema.json",
+  "title": "NEOTH Babel Rolling Window",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "window",
+    "system",
+    "features",
+    "candidate_scores",
+    "labels"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "duration_seconds"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "duration_seconds": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runtime",
+        "repo"
+      ],
+      "properties": {
+        "runtime": {
+          "type": "string",
+          "const": "NEOTH"
+        },
+        "repo": {
+          "type": "string",
+          "format": "uri"
+        },
+        "runtime_version": {
+          "type": "string"
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "C",
+        "K",
+        "M",
+        "A",
+        "V",
+        "D",
+        "H"
+      ],
+      "properties": {
+        "C": {
+          "type": "number",
+          "minimum": 0
+        },
+        "K": {
+          "type": "number",
+          "minimum": 0
+        },
+        "M": {
+          "type": "number",
+          "minimum": 0
+        },
+        "A": {
+          "type": "number",
+          "minimum": 0
+        },
+        "V": {
+          "type": "number",
+          "minimum": 0
+        },
+        "D": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "H": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "candidate_scores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      },
+      "minProperties": 1
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collapse_within_5m",
+        "collapse_kind"
+      ],
+      "properties": {
+        "collapse_within_5m": {
+          "type": "boolean"
+        },
+        "collapse_kind": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "agent_loop",
+            "retry_storm",
+            "tool_timeout_cascade",
+            "context_limit_failure",
+            "fallback_failure",
+            "semantic_degradation",
+            "objective_failure"
+          ]
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -1,8 +1,7 @@
 # Repository Settings Checklist
 
-The GitHub connector used to prepare this repository can write files, issues,
-and pull requests, but it cannot currently edit repository metadata such as
-About text, homepage, topics, or social preview.
+Some GitHub repository settings cannot be represented as versioned files:
+About text, homepage, topics, Pages, and social preview.
 
 Use the following values in GitHub's repository settings.
 
@@ -11,13 +10,25 @@ Use the following values in GitHub's repository settings.
 Description:
 
 ```text
-RDelta preformalism and Babel Index telemetry for predicting collapse in agentic LLM systems, tested with NEOTH.
+Open RDelta/Babel Index framework for LLM agents and world-systems: detect context degeneration, agent loops, tool fragility, and collapse with NEOTH.
 ```
 
 Website:
 
 ```text
+https://the-geek-freaks.github.io/delta-kosmologie/
+```
+
+Use the GitHub repository URL only until Pages is enabled:
+
+```text
 https://github.com/The-Geek-Freaks/delta-kosmologie
+```
+
+DeepWiki:
+
+```text
+https://deepwiki.com/The-Geek-Freaks/delta-kosmologie
 ```
 
 ## Topics
@@ -43,6 +54,8 @@ tool-use
 context-degeneration
 agent-loops
 semantic-collapse
+llm-observability
+runtime-telemetry
 ```
 
 ## Social Preview
@@ -50,11 +63,14 @@ semantic-collapse
 Use:
 
 ```text
-assets/social-preview.svg
+assets/social-preview.png
 ```
 
-GitHub may require PNG/JPG for the social preview UI. If so, export the SVG to
-PNG at 1280x640.
+Source file:
+
+```text
+assets/social-preview.svg
+```
 
 ## GitHub Pages
 
@@ -67,7 +83,22 @@ Optional:
 
 This will publish `docs/index.html` as a compact project landing page.
 
+Expected Pages URL:
+
+```text
+https://the-geek-freaks.github.io/delta-kosmologie/
+```
+
 ## NEOTH Reciprocal Link
 
 Add the backlink snippet from [docs/neoth-discovery-bridge.md](neoth-discovery-bridge.md)
 to the NEOTH README so both repositories reinforce each other in GitHub search.
+
+## Machine-Readable Discovery
+
+Keep these files in sync with repository settings:
+
+- [../llms.txt](../llms.txt)
+- [../codemeta.json](../codemeta.json)
+- [../metadata/repository-metadata.yml](../metadata/repository-metadata.yml)
+- [../metadata/repository-topics.txt](../metadata/repository-topics.txt)

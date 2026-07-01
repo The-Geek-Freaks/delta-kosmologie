@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this framework, please cite the paper repository."
-title: "Delta-Kosmologie v1.0: RDelta-Praeformalismus"
+title: "Delta Cosmology v1.0: RDelta Preformalism"
 authors:
   - family-names: "Zuber-Jatzke"
     given-names: "Alexander"
@@ -10,7 +10,7 @@ repository-code: "https://github.com/The-Geek-Freaks/delta-kosmologie"
 url: "https://github.com/The-Geek-Freaks/delta-kosmologie"
 keywords:
   - "RDelta"
-  - "Delta-Kosmologie"
+  - "Delta Cosmology"
   - "Babel index"
   - "LLM agents"
   - "complex systems"

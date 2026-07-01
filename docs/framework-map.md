@@ -2,6 +2,9 @@
 
 ![RDelta framework map](../assets/rdelta-framework-map.svg)
 
+See the full [visual guide](visual-guide.md) for the telemetry pipeline and
+claim-boundary diagrams.
+
 ## Layers
 
 | Layer | Function | Claim type |
@@ -15,15 +18,12 @@
 
 ## Event Flow
 
-```mermaid
-flowchart TD
-    A["NEOTH runtime events"] --> B["Rolling windows"]
-    B --> C["Raw features C K M A V D H"]
-    C --> D["Babel variants"]
-    D --> E["Nested prediction test"]
-    E --> F["Supported, inconclusive, or falsified"]
-```
+![Babel Index telemetry pipeline](../assets/babel-index-pipeline.svg)
 
 The important point is that the Babel score is not accepted because it looks
 elegant. It must add signal after the raw features and standard controls are
 already in the model.
+
+## Claim Boundary
+
+![Claim boundary](../assets/claim-boundary.svg)
