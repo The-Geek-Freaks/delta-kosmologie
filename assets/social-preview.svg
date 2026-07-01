@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Delta Cosmology social preview</title>
+  <desc id="desc">Social preview card for Delta Cosmology, Babel Index, and NEOTH.</desc>
+  <rect width="1280" height="640" fill="#0b1020"/>
+  <circle cx="1040" cy="140" r="180" fill="#0e7490" opacity="0.32"/>
+  <circle cx="1120" cy="420" r="220" fill="#14b8a6" opacity="0.14"/>
+  <rect x="72" y="74" width="1136" height="492" rx="30" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <text x="124" y="168" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="64" font-weight="800">Delta Cosmology</text>
+  <text x="126" y="224" fill="#67e8f9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">RDelta preformalism + Babel Index + NEOTH telemetry</text>
+  <text x="126" y="310" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="31">A falsifiable framework for measuring loss of productive</text>
+  <text x="126" y="352" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="31">difference in agentic LLM systems.</text>
+  <rect x="126" y="425" width="258" height="58" rx="16" fill="#042f2e" stroke="#14b8a6"/>
+  <text x="154" y="462" fill="#ccfbf1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">Babel Index</text>
+  <rect x="412" y="425" width="220" height="58" rx="16" fill="#172554" stroke="#60a5fa"/>
+  <text x="442" y="462" fill="#dbeafe" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">NEOTH Probe</text>
+  <rect x="660" y="425" width="292" height="58" rx="16" fill="#312e81" stroke="#818cf8"/>
+  <text x="688" y="462" fill="#e0e7ff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="23" font-weight="700">Nested falsification</text>
+  <text x="126" y="525" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20">github.com/The-Geek-Freaks/delta-kosmologie</text>
+</svg>
