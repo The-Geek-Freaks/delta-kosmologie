@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1.0",
+  "window": {
+    "start": "2026-07-01T10:00:00Z",
+    "end": "2026-07-01T10:05:00Z",
+    "duration_seconds": 300
+  },
+  "system": {
+    "runtime": "NEOTH",
+    "repo": "https://github.com/The-Geek-Freaks/NEOTH",
+    "runtime_version": "unknown"
+  },
+  "features": {
+    "C": 0.62,
+    "K": 0.71,
+    "M": 0.56,
+    "A": 0.48,
+    "V": 0.68,
+    "D": 0.44,
+    "H": 0.39
+  },
+  "candidate_scores": {
+    "B_mult": 0.73,
+    "B_log": 0.69,
+    "B_bottleneck": 0.64
+  },
+  "labels": {
+    "collapse_within_5m": false,
+    "collapse_kind": null
+  },
+  "notes": "Illustrative values only. Not calibrated data."
+}
