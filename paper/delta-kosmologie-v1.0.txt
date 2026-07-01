@@ -1,0 +1,96 @@
+Delta-Kosmologie v1.0 - RDelta-Praeformalismus
+
+Status: Spekulatives Rahmenmodell, keine etablierte Physik. Das Paper trennt messbare Physik, dimensionslose Indizes und heuristische Operatoren. Sein Ziel ist nicht Ersatz etablierter Modelle, sondern Erzeugung begrenzter, testbarer Teilhypothesen.
+
+Autorische Idee: Alexander Zuber-Jatzke / RIC-Kontext
+Datum: 2026-07-01
+
+Kurzfassung
+
+Die Delta-Kosmologie formuliert den Grundgedanken, dass weder Differenz allein noch Rekursion allein als Urbegriff ausreicht. Differenz wird erst durch Rekursion stabil, Rekursion wird erst durch Differenz unterscheidbar. Der gemeinsame Praeoperator heisst hier RDelta.
+
+Der Urknall wird in dieser Fassung nicht als absoluter Anfang des Seins gelesen, sondern als lokaler Differenzrand eines emergenten Universums. Innenbeobachter erleben die geordnete Verarbeitung von Differenzen als Zeit und die stabile Projektion dieser Ordnung als Kausalitaet.
+
+Alle Gleichungen sind in drei Klassen getrennt: physikalische Gleichungen mit Einheiten, dimensionslose Indexmodelle und heuristische Operatoren. Der Babel-Index ist kein Entropiewert in Joule pro Kelvin, sondern eine kalibrierbare Indexfamilie fuer Verlust produktiver Differenz innerhalb klar begrenzter Domaenen.
+
+Core Claim Boundary
+
+- Kein Beweis, dass unser Universum tatsaechlich ein Atemzug einer Superemergenz ist.
+- Keine physikalische Gleichsetzung von semantischem Babel mit thermodynamischer Entropie.
+- Kein Schluss von erfolgreicher OSS- oder LLM-Modellierung auf die Wahrheit der kosmologischen Ontologie.
+- Empirische Anwendungen brauchen endliche Parameterbudgets, zaehlbare Kopplungsgraphen, Kalibrierung und Modellvergleich gegen lokale Nullmodelle.
+
+Babel-Index-Familie
+
+B_d = f_d(C_d, K_d, M_d, A_d, V_d, D_d, H_d)
+
+d = Domaene, z.B. Software, LLM-Oekosystem, Markt, Institution.
+f_d = pro Domaene kalibrierte Funktion.
+
+Beispielhafte Grundform:
+
+B_d = (C_d * K_d * M_d * A_d * V_d) / (D_d * H_d + eps)
+
+C_d = Kopplungsgrad
+K_d = Kohaerenz / Gleichschaltung
+M_d = Wettbewerbs- oder Optimierungsdruck
+A_d = autonome Akteurs- oder Agentendichte
+V_d = Informationsgeschwindigkeit
+D_d = Differenzierungsfaehigkeit / semantische Trennschaerfe
+H_d = Heterarchie, Redundanz, Modularitaet
+
+Wichtig: B_d ist nicht universell vergleichbar. Ein B_Wiki kann nicht direkt mit B_LLM oder B_Epoche verglichen werden. Vergleich erlaubt nur innerhalb einer kalibrierten Domaene.
+
+Pilotprotokoll B: LLM-/Agenten-Oekosysteme
+
+Ein einzelner Benchmark darf keinen Eval-Kollaps definieren. Die Domaene ist stark Goodhart-gefaehrdet: Benchmarks saettigen, Daten kontaminieren, Anbieter cherry-picken, und Agenten koennen Testspezifika lernen.
+
+LLM/Agenten-Babel: robuste Degradationsdefinition
+
+Eine Babel-Degradation liegt nur vor, wenn:
+
+1. E_portfolio out-of-sample faellt oder entkoppelt,
+2. zugleich Kopplung, Agentenzahl, Synthetic-Data-Anteil oder Tool-Abhaengigkeit steigen,
+3. mindestens zwei Nullmodelle schlechter erklaeren,
+4. Kontamination, Benchmark-Saettigung und Goodharting geprueft wurden.
+
+Nicht ausreichend:
+
+- ein schlechter Score auf einem oeffentlichen Benchmark,
+- ein Plateau, wenn der Benchmark allgemein gesaettigt ist,
+- ein Modelllimit ohne steigenden Babel-Index,
+- ein Anbieterwechsel der Eval-Methodik.
+
+Nested Feature Test
+
+Die multiplikative Form C*K*M*A*V/(D*H+epsilon) ist kein eigenstaendiger Zauberterm. Log-transformiert ist sie ein log-lineares Spezialmodell mit fixierten Vorzeichen und Koeffizienten. Der korrekte Test fragt deshalb nicht, ob B_d als Gesamtmodell jedes flexible ML-Modell schlaegt, sondern ob die spezifische Struktur inkrementelles Signal liefert.
+
+Features F = {C,K,M,A,V,D,H}
+Outcome Y = Fork, Archive, Maintainer-Abgang, API-Bruch, Standard-Split, Agenten-Loop, Tool-Timeout-Kaskade oder Kontextdegeneration.
+
+Base:
+Y ~ controls + f(F)
+
+Extended:
+Y ~ controls + f(F) + B_variant(F)
+
+Zulaessige Tests:
+
+- Likelihood-Ratio / DeltaIC
+- Cross-validated AUC, Brier, LogLoss
+- Permutation-Importance von B_variant
+- Bootstrap-Konfidenzintervall der Zusatzleistung
+
+Falsifikation
+
+Wenn B_variant nach Kontrolle der Haupteffekte irrelevant ist, ist die Babel-Ratio-Struktur fuer diese Domaene falsifiziert.
+
+NEOTH Testbed
+
+NEOTH: https://github.com/The-Geek-Freaks/NEOTH
+
+NEOTH wird als agentische LLM-Distribution genutzt, um Pilot Protocol B praktisch zu testen. Das Modul soll als asynchroner Observer im Orchestrierungs-Layer laufen und rolling windows ueber Runtime-Signale bilden, ohne die Inference selbst zu blockieren.
+
+Hinweis
+
+Dies ist ein kuratierter Textauszug fuer das GitHub-Repo. Das lokal erzeugte vollstaendige PDF-Artefakt liegt im vorbereiteten Repo-Zip und sollte als Binary per Git/Release hochgeladen werden, sobald ein normaler GitHub-Push oder Release-Upload verfuegbar ist.
