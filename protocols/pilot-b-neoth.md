@@ -33,6 +33,7 @@ Suggested horizons:
 | `agent_loop` | repeated state/action pattern without progress |
 | `retry_storm` | abnormal retry density in a short window |
 | `tool_timeout_cascade` | multiple dependent tool timeouts in one task graph |
+| `tool_selection_failure` | wrong, rejected, or inapplicable tool selected at call boundary |
 | `context_limit_failure` | truncation or crash at context boundary |
 | `fallback_failure` | primary route fails and fallback fails or degrades objective |
 | `semantic_degradation` | high self-similarity plus falling task score |
@@ -72,8 +73,9 @@ At minimum:
 
 ## Evidence Standard
 
-The protocol supports the Babel feature only if `B_NEOTH` improves prediction
-after controlling for raw features and basic operational controls.
+The protocol supports the Babel feature only if a pre-registered `B_neoth_*`
+variant, led by `B_neoth_log`, improves prediction after controlling for raw
+features and basic operational controls.
 
 Valid evidence:
 

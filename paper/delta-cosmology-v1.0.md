@@ -92,7 +92,7 @@ For a domain `d`:
 B_d = f_d(C_d, K_d, M_d, A_d, V_d, D_d, H_d)
 ```
 
-Candidate multiplicative form (five independent factors):
+Candidate multiplicative form (five stress terms after ratio substitution):
 
 ```text
 B_d(t) = norm_d((C_d(t) * K_d(t) * M_d(t)) /

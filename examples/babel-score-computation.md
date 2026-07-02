@@ -39,33 +39,31 @@ B_log = (−0.4780 + −0.3425 + −0.5798 + −0.7340 + −0.3857)
       = −0.7574   (natural log)
 ```
 
-Note: Using natural log throughout.  The example file reports `B_neoth_log = -2.9073`
-which uses log base 2; the formula in `babel-index.md` does not specify the base
-so implementations MUST record which base was used.  NEOTH v0 uses natural log.
-The sign is the same regardless of base; only the scale differs.  Cross-instance
-pooling requires the same base — use natural log.
-
-**Corrected value for the example file (natural log)**: `B_neoth_log = −0.7574`.
+Note: Using natural log throughout.  The example file reports
+`B_neoth_log = -0.7574` and `B_neoth_log_base = "e"`.
+Cross-instance pooling requires the same base — use natural log.
 
 ## Form 2: B_neoth_mult (Multiplicative — requires calibrated epsilon)
 
 ```
-B_mult_raw = (C × K × M × A × V) / (D × H + ε)
+B_neoth_mult_raw = (C × K × M) / ((D / A) × (H / V) + ε)
 ```
 
 ```
-numerator = 0.62 × 0.71 × 0.56 × 0.48 × 0.68
-           = 0.62 × 0.71 = 0.4402
-             × 0.56 = 0.2465
-             × 0.48 = 0.1183
-             × 0.68 = 0.0805
+numerator = 0.62 × 0.71 × 0.56
+          = 0.62 × 0.71 = 0.4402
+            × 0.56 = 0.2465
 
-denominator = 0.44 × 0.39 + ε
-            = 0.1716 + ε
+buffer_ratio_1 = D / A = 0.44 / 0.48 = 0.9167
+buffer_ratio_2 = H / V = 0.39 / 0.68 = 0.5735
+
+denominator = 0.9167 × 0.5735 + ε
+            = 0.5257 + ε
 ```
 
-With ε = 0.01 × median(D×H over calibration batch) — must be pre-registered.
-For this example, ε = null (epsilon not yet calibrated; b_neoth_mult = null).
+With ε = 0.01 × median((D/A)×(H/V) over calibration batch) — must be
+pre-registered. For this example, ε = null (epsilon not yet calibrated;
+`B_neoth_mult = null`).
 
 ## Form 3: B_neoth_bottleneck
 

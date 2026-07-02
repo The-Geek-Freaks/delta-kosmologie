@@ -429,6 +429,146 @@ def validate_examples(failures: list[str]) -> None:
             f"must be {CANONICAL_EPSILON_TAG!r}"
         )
 
+    # Check all checked window examples that carry B_neoth_log use natural log
+    # and match the declared schema version. Additional examples can stay
+    # exploratory, but published NEOTH windows must not drift silently.
+    for rel_path in [
+        "examples/neoth-babel-window.example.json",
+        "examples/neoth-babel-window.negative-control.example.json",
+    ]:
+        if not (ROOT / rel_path).exists():
+            continue
+        candidate = load_json(rel_path)
+        if not isinstance(candidate, dict):
+            failures.append(f"{rel_path} must be a JSON object")
+            continue
+        if schema_version_const is not None and candidate.get("schema_version") != schema_version_const:
+            failures.append(
+                f"{rel_path} schema_version {candidate.get('schema_version')!r} "
+                f"does not match schema const {schema_version_const!r}"
+            )
+        candidate_scores = candidate.get("candidate_scores", {})
+        if not isinstance(candidate_scores, dict):
+            failures.append(f"{rel_path} candidate_scores must be an object")
+            continue
+        log_base = candidate_scores.get("B_neoth_log_base")
+        if candidate_scores.get("B_neoth_log") is not None and log_base != "e":
+            failures.append(f"{rel_path} B_neoth_log_base must be 'e' when B_neoth_log is present")
+        elif log_base is not None and log_base != "e":
+            failures.append(f"{rel_path} B_neoth_log_base must be 'e', got {log_base!r}")
+
+        candidate_features = candidate.get("features", {})
+        if isinstance(candidate_features, dict) and all(
+            isinstance(candidate_features.get(s), (int, float)) for s in ["C", "K", "M", "A", "V", "D", "H"]
+        ) and candidate_scores.get("B_neoth_log") is not None:
+            try:
+                C_, K_, M_, A_, V_, D_, H_ = (
+                    float(candidate_features["C"]),
+                    float(candidate_features["K"]),
+                    float(candidate_features["M"]),
+                    float(candidate_features["A"]),
+                    float(candidate_features["V"]),
+                    float(candidate_features["D"]),
+                    float(candidate_features["H"]),
+                )
+                expected_log = (
+                    _math.log(C_) + _math.log(K_) + _math.log(M_)
+                    + _math.log(A_ / D_) + _math.log(V_ / H_)
+                )
+                actual_log = float(candidate_scores["B_neoth_log"])
+                if abs(actual_log - expected_log) > 1e-3:
+                    failures.append(
+                        f"{rel_path} B_neoth_log {actual_log} differs from recomputed "
+                        f"natural-log ratio-form value {expected_log:.4f} by more than 1e-3"
+                    )
+            except (ValueError, ZeroDivisionError):
+                failures.append(f"{rel_path} B_neoth_log could not be recomputed")
+
+        candidate_epsilon_rule = candidate_scores.get("B_neoth_mult_epsilon_rule")
+        if candidate_epsilon_rule is not None and candidate_epsilon_rule != CANONICAL_EPSILON_TAG:
+            failures.append(
+                f"{rel_path} B_neoth_mult_epsilon_rule {candidate_epsilon_rule!r} "
+                f"must be {CANONICAL_EPSILON_TAG!r}"
+            )
+
+
+def validate_markdown_formula_artifacts(failures: list[str]) -> None:
+    score_text = read("examples/babel-score-computation.md")
+    stale_values = ["-" + "2.9073", "\u2212" + "2.9073"]
+    for stale_value in stale_values:
+        if stale_value in score_text:
+            failures.append(f"examples/babel-score-computation.md contains stale B_neoth_log value {stale_value}")
+
+    old_formula = re.compile(r"D\s*[×*]\s*H\s*\+\s*(?:ε|epsilon)", re.IGNORECASE)
+    if old_formula.search(score_text):
+        failures.append("examples/babel-score-computation.md contains stale D*H epsilon denominator")
+    if re.search(r"median\s*\(\s*D\s*[×*]\s*H", score_text, re.IGNORECASE):
+        failures.append("examples/babel-score-computation.md contains stale multiplicative epsilon rule")
+    if 'B_neoth_log_base = "e"' not in score_text:
+        failures.append('examples/babel-score-computation.md must state B_neoth_log_base = "e"')
+
+    stale_score_name = "B_" + "NEOTH"
+    for rel_path in ["README.md", "docs/neoth-integration.md", "protocols/pilot-b-neoth.md"]:
+        if stale_score_name in read(rel_path):
+            failures.append(f"{rel_path} contains stale generic NEOTH score naming")
+    stale_paper_phrase = "five " + "independent factors"
+    if stale_paper_phrase in read("paper/delta-cosmology-v1.0.md"):
+        failures.append("paper/delta-cosmology-v1.0.md contains stale multiplicative-form wording")
+
+
+def validate_collapse_label_consistency(failures: list[str]) -> None:
+    event_schema = load_json("schemas/neoth-babel-event.schema.json")
+    window_schema = load_json("schemas/neoth-babel-window.schema.json")
+    if not isinstance(event_schema, dict) or not isinstance(window_schema, dict):
+        failures.append("Schema files must be JSON objects")
+        return
+
+    schema_enum = (
+        event_schema.get("properties", {})
+        .get("collapse_label", {})
+        .get("enum", [])
+    )
+    schema_labels = {label for label in schema_enum if isinstance(label, str)}
+    if not schema_labels:
+        failures.append("schemas/neoth-babel-event.schema.json collapse_label enum must not be empty")
+        return
+
+    label_properties = (
+        window_schema.get("properties", {})
+        .get("labels", {})
+        .get("properties", {})
+    )
+    for field_name in ["collapse_within_30m_kind", "collapse_kind"]:
+        enum_values = label_properties.get(field_name, {}).get("enum", [])
+        window_labels = {label for label in enum_values if isinstance(label, str)}
+        if window_labels != schema_labels:
+            failures.append(
+                f"schemas/neoth-babel-window.schema.json {field_name} labels "
+                f"{sorted(window_labels)} do not match event schema labels {sorted(schema_labels)}"
+            )
+
+    definitions_text = read("protocols/collapse-label-definitions.md")
+    definition_labels = set(
+        re.findall(r"^## Label \d+: `([^`]+)`", definitions_text, flags=re.MULTILINE)
+    )
+    if definition_labels != schema_labels:
+        failures.append(
+            "protocols/collapse-label-definitions.md labels "
+            f"{sorted(definition_labels)} do not match event schema labels {sorted(schema_labels)}"
+        )
+    stale_subsumed_note = "Subsumed `" + "tool_selection_failure`"
+    if stale_subsumed_note in definitions_text:
+        failures.append(
+            "protocols/collapse-label-definitions.md still subsumes tool_selection_failure "
+            "instead of defining it as a canonical label"
+        )
+
+    for rel_path in ["protocols/pilot-b-neoth.md", "docs/neoth-integration.md"]:
+        text = read(rel_path)
+        missing = sorted(label for label in schema_labels if f"`{label}`" not in text)
+        if missing:
+            failures.append(f"{rel_path} is missing canonical collapse labels: {', '.join(missing)}")
+
 
 def validate_language_surface(failures: list[str]) -> None:
     banned_terms = [
@@ -462,6 +602,8 @@ def main() -> int:
     validate_codemeta(failures, topics)
     validate_html_head(failures)
     validate_examples(failures)
+    validate_markdown_formula_artifacts(failures)
+    validate_collapse_label_consistency(failures)
     validate_language_surface(failures)
 
     if failures:

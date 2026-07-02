@@ -19,7 +19,7 @@ Recommended placement:
 Non-goal:
 
 - no direct steering of model output in the first phase,
-- no hard runtime kill switch based only on `B_NEOTH`,
+- no hard runtime kill switch based only on any `B_neoth_*` score,
 - no claim that operational predictive value proves the cosmological layer.
 
 ## Runtime Signals
@@ -58,8 +58,11 @@ The correct test is nested:
 
 ```text
 Base:     Y ~ controls + f(C,K,M,A,V,D,H)
-Extended: Y ~ controls + f(C,K,M,A,V,D,H) + B_NEOTH
+Extended: Y ~ controls + f(C,K,M,A,V,D,H) + B_variant(F)
 ```
+
+For the primary NEOTH pilot, `B_variant(F)` is `B_neoth_log`.  `B_neoth_mult`
+and `B_neoth_bottleneck` are secondary pre-registered variants.
 
 Evidence for the Babel feature requires out-of-sample incremental signal:
 

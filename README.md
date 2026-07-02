@@ -119,7 +119,8 @@ The integration plan:
    fallback attempts, context pressure, agent activity, and outcomes.
 3. Compute raw features `{C,K,M,A,V,D,H}`.
 4. Compute candidate Babel variants.
-5. Test whether `B_NEOTH` predicts failures beyond raw telemetry features.
+5. Test whether the pre-registered `B_neoth_*` variants, led by
+   `B_neoth_log`, predict failures beyond raw telemetry features.
 
 The goal is not mysticism. The goal is operational early warning for complex
 agent systems.

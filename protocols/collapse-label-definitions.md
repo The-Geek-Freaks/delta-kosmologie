@@ -41,11 +41,26 @@ of the source.  The two labels can co-occur.
 
 **Computable from**: `event_type`, `success`, `error_kind`, `tool` fields.
 
-**Notes**: Subsumed `tool_selection_failure` from `docs/neoth-integration.md`
-(see that file for the alignment note).  A tool that times out once does not
-trigger this label; the cascade requires failure across ≥ 4 distinct tools.
+**Notes**: A tool that times out once does not trigger this label; the cascade
+requires failure across ≥ 4 distinct tools.  Tool-selection errors are tracked
+separately by `tool_selection_failure`.
 
-## Label 4: `context_limit_failure`
+## Label 4: `tool_selection_failure`
+
+**Detection rule**: `event_type=tool_call_end` with `success=false` and
+`error_kind` matching one of `wrong_tool`, `invalid_tool`, `inapplicable_tool`,
+`tool_schema_mismatch`, `tool_not_allowed`, `permission_denied_for_tool`, or
+containing "selection" (case-insensitive).
+
+**Computable from**: `event_type`, `success`, `error_kind`, `tool`,
+`agent_id` fields.
+
+**Notes**: This label is distinct from `tool_timeout_cascade`.  It captures
+wrong, unavailable, rejected, or inapplicable tool choice before or at the
+tool-call boundary.  It can co-occur with `retry_storm`, but should not be
+merged with timeout failures unless both error classes are explicitly emitted.
+
+## Label 5: `context_limit_failure`
 
 **Detection rule**: `context_used_ratio >= 0.95` in a `context_boundary` event
 followed by an error event with `error_kind` containing "context" or "truncation"
@@ -57,7 +72,7 @@ within the same session.
 **Notes**: The ordering requirement (near-limit event precedes the error event)
 prevents false positives from unrelated context errors.
 
-## Label 5: `semantic_degradation`
+## Label 6: `semantic_degradation`
 
 **Detection rule**: K_d (as defined in `feature-extraction-spec.md`,
 `K_d_v0`) exceeds 0.90 for 3 or more consecutive 5-minute sub-windows
@@ -69,7 +84,7 @@ within the primary 15-minute window.
 rather than raw event fields.  The K_d algorithm version used for detection
 MUST match the one reported in the window record.
 
-## Label 6: `fallback_failure`
+## Label 7: `fallback_failure`
 
 **Detection rule**: a `fallback_attempt` event is NOT followed by a
 `fallback_result` event with `success=true` for the same session within
@@ -81,7 +96,7 @@ MUST match the one reported in the window record.
 occurrence of a fallback attempt.  A successful fallback (attempt followed
 by success=true) does not trigger this label.
 
-## Label 7: `objective_failure`
+## Label 8: `objective_failure`
 
 **Detection rule**: a `collapse_label` event with `collapse_label=objective_failure`
 is present in the session, OR a manual label is applied via

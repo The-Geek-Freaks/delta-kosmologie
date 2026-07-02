@@ -1,5 +1,5 @@
 {
-  "schema_version": "neoth-babel-window/0.2.0",
+  "schema_version": "neoth-babel-window/0.2.1",
   "_note": "Negative control window from a single-agent, single-tool, no-retry deterministic run. B_d should be near the minimum of the instance distribution.",
   "window": {
     "start": "2026-07-01T09:00:00Z",
@@ -33,12 +33,13 @@
     "H": "H_d_v0"
   },
   "candidate_scores": {
-    "_computation_note": "Low C,K,M,A,V + high D,H → deeply negative B_log (low Babel risk).",
-    "B_neoth_log": -11.85,
+    "_computation_note": "Low C,K,M,A,V + high D,H -> deeply negative B_neoth_log (low Babel risk).",
+    "B_neoth_log": -11.2661,
+    "B_neoth_log_base": "e",
     "B_neoth_bottleneck": 0.08,
     "B_neoth_mult": null,
     "B_neoth_mult_epsilon": null,
-    "B_neoth_mult_epsilon_rule": "0.01_median_DH_calibration"
+    "B_neoth_mult_epsilon_rule": "0.01_median_buffer_ratio_calibration"
   },
   "labels": {
     "collapse_within_5m": false,
