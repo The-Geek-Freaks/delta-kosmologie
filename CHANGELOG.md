@@ -48,6 +48,34 @@
   Outcome Labels section in `docs/neoth-integration.md` as a schema-referenced
   table with 8 canonical labels; the schema is now the declared authoritative
   source.
+- **ARTIFACT-CONSISTENCY (external review 2026-07-02):** Applied cross-artifact
+  consistency pass:
+  - `examples/neoth-babel-window.example.json`: bumped `schema_version` to
+    `neoth-babel-window/0.2.1` (aligned with schema const); corrected
+    `B_neoth_log` from stale `-2.9073` to `-0.7574` (recomputed as
+    `log(C)+log(K)+log(M)+log(A/D)+log(V/H)`, natural log); added
+    `B_neoth_log_base: "e"` (permitted by `additionalProperties`); renamed
+    `B_neoth_mult_epsilon_rule` from `0.01_median_DH_calibration` to
+    `0.01_median_buffer_ratio_calibration` (aligns with pre-registration.md
+    and babel-index.md §Epsilon Governance). `B_neoth_bottleneck` remains
+    `1.0909` (verified correct: `min(C,K,M,A,V)/max(D,H) = 0.48/0.44`).
+    `B_neoth_mult` remains `null` (epsilon not yet calibrated — no change).
+  - `schemas/neoth-babel-window.schema.json`: corrected `$id` from
+    `babel-federation-window.schema.json` to `neoth-babel-window.schema.json`
+    (filename-matching); updated `B_neoth_mult_epsilon_rule` description to
+    reference `0.01_median_buffer_ratio_calibration`.
+  - `scripts/validate_repository.py`: fixed `validate_examples` to compare
+    `system.repo` against the slug `The-Geek-Freaks/NEOTH` (not the full URL);
+    added checks for example `schema_version` vs schema const, recomputed
+    `B_neoth_log` within 1e-3, recomputed `B_neoth_bottleneck` within 1e-3,
+    and canonical `B_neoth_mult_epsilon_rule` tag.
+  - `README.md`: replaced stale primary formula `norm_d(C*K*M*A*V/(D*H+ε))`
+    with `B_log` (natural-log ratio form) as primary and `B_mult` ratio form
+    as interpretability variant.
+  - `protocols/pilot-b-neoth.md`: replaced stale `B_NEOTH = norm(C*K*M*A*V/(D*H+ε))`
+    with three-form table; stated explicitly that `B_neoth_log` is primary,
+    `B_neoth_mult` is the interpretability variant, `B_neoth_bottleneck` is
+    the structural stress test.
 
 ## 1.0.0 - 2026-07-01
 

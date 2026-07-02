@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/The-Geek-Freaks/delta-kosmologie/schemas/babel-federation-window.schema.json",
+  "$id": "https://github.com/The-Geek-Freaks/delta-kosmologie/schemas/neoth-babel-window.schema.json",
   "title": "Babel Federation Window",
   "description": "Universal Babel-Index rolling window record for cross-instance research pooling. Runtime-agnostic; NEOTH is the v0 reference runtime. Replaces neoth-babel-window.schema.json v0.1.0.",
   "type": "object",
@@ -110,7 +110,7 @@
         },
         "B_neoth_mult_epsilon_rule": {
           "type": "string",
-          "description": "Epsilon governance rule: '0.01_median_DH_calibration' for the reference implementation."
+          "description": "Epsilon governance rule: '0.01_median_buffer_ratio_calibration' for the reference implementation."
         },
         "B_neoth_bottleneck": {
           "type": "number",

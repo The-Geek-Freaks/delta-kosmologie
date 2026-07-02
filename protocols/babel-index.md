@@ -171,7 +171,13 @@ Three forms are defined for the NEOTH domain.  All are domain-prefixed:
 | --- | --- | --- |
 | `B_neoth_log` | `log(C)+log(K)+log(M)+log(A/D)+log(V/H)` | Cross-instance pooling (no epsilon) |
 | `B_neoth_mult` | `norm((C×K×M) / ((D/A)×(H/V)+ε))` | Interpretability; five-factor form |
-| `B_neoth_bottleneck` | `min(C,K,M,A/D,V/H) / max(D,H)` | Structural stress test |
+| `B_neoth_bottleneck` | `min(C,K,M,A,V) / max(D,H)` | Structural stress test |
+
+(The bottleneck form deliberately uses the RAW variables — it asks "what is
+the weakest amplifier against the strongest buffer", so the load/capacity
+ratio substitution does not apply here. A ratio-based bottleneck variant
+`min(C,K,M,A/D,V/H) / max(D,H)` may be pre-registered as an additional M4
+candidate form.)
 
 B_d values across domains (`B_neoth_*` vs `B_oss_*`) MUST NOT be compared
 without a published calibration function.

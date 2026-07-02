@@ -366,8 +366,68 @@ def validate_examples(failures: list[str]) -> None:
         if not isinstance(value, (int, float)):
             failures.append(f"Window example feature {symbol} must be numeric")
     system = window.get("system", {})
-    if isinstance(system, dict) and system.get("repo") != NEOTH_URL:
-        failures.append("Window example must point to the NEOTH repository")
+    NEOTH_SLUG = "The-Geek-Freaks/NEOTH"
+    if isinstance(system, dict) and system.get("repo") != NEOTH_SLUG:
+        failures.append(
+            f"Window example system.repo must be the slug {NEOTH_SLUG!r}, not a full URL"
+        )
+
+    # Check example schema_version matches the schema's declared const.
+    schema_version_const = (
+        window_schema.get("properties", {})
+        .get("schema_version", {})
+        .get("const")
+    )
+    if schema_version_const is not None and window.get("schema_version") != schema_version_const:
+        failures.append(
+            f"Window example schema_version {window.get('schema_version')!r} "
+            f"does not match schema const {schema_version_const!r}"
+        )
+
+    # Recompute B_neoth_log (natural log, ratio form) and assert within 1e-3.
+    import math as _math
+    ftr = window.get("features", {})
+    if all(isinstance(ftr.get(s), (int, float)) for s in ["C", "K", "M", "A", "V", "D", "H"]):
+        C_, K_, M_, A_, V_, D_, H_ = (
+            float(ftr["C"]), float(ftr["K"]), float(ftr["M"]),
+            float(ftr["A"]), float(ftr["V"]),
+            float(ftr["D"]), float(ftr["H"]),
+        )
+        scores = window.get("candidate_scores", {})
+        if scores.get("B_neoth_log") is not None:
+            try:
+                expected_log = (
+                    _math.log(C_) + _math.log(K_) + _math.log(M_)
+                    + _math.log(A_ / D_) + _math.log(V_ / H_)
+                )
+                actual_log = float(scores["B_neoth_log"])
+                if abs(actual_log - expected_log) > 1e-3:
+                    failures.append(
+                        f"Window example B_neoth_log {actual_log} differs from recomputed "
+                        f"natural-log ratio-form value {expected_log:.4f} by more than 1e-3"
+                    )
+            except (ValueError, ZeroDivisionError):
+                failures.append("Window example B_neoth_log could not be recomputed (zero/negative feature)")
+
+        # Recompute B_neoth_bottleneck: min(C,K,M,A,V) / max(D,H).
+        if scores.get("B_neoth_bottleneck") is not None:
+            expected_bn = min(C_, K_, M_, A_, V_) / max(D_, H_)
+            actual_bn = float(scores["B_neoth_bottleneck"])
+            if abs(actual_bn - expected_bn) > 1e-3:
+                failures.append(
+                    f"Window example B_neoth_bottleneck {actual_bn} differs from recomputed "
+                    f"value {expected_bn:.4f} by more than 1e-3"
+                )
+
+    # Check epsilon-rule tag when present.
+    scores = window.get("candidate_scores", {})
+    epsilon_rule = scores.get("B_neoth_mult_epsilon_rule")
+    CANONICAL_EPSILON_TAG = "0.01_median_buffer_ratio_calibration"
+    if epsilon_rule is not None and epsilon_rule != CANONICAL_EPSILON_TAG:
+        failures.append(
+            f"Window example B_neoth_mult_epsilon_rule {epsilon_rule!r} "
+            f"must be {CANONICAL_EPSILON_TAG!r}"
+        )
 
 
 def validate_language_surface(failures: list[str]) -> None:

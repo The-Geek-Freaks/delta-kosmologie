@@ -1,5 +1,5 @@
 {
-  "schema_version": "neoth-babel-window/0.2.0",
+  "schema_version": "neoth-babel-window/0.2.1",
   "_note": "Illustrative values. Score arithmetic is verifiable — see examples/babel-score-computation.md.",
   "window": {
     "start": "2026-07-01T10:00:00Z",
@@ -34,11 +34,12 @@
   },
   "candidate_scores": {
     "_computation_note": "See examples/babel-score-computation.md for step-by-step arithmetic.",
-    "B_neoth_log": -2.9073,
+    "B_neoth_log": -0.7574,
+    "B_neoth_log_base": "e",
     "B_neoth_bottleneck": 1.0909,
     "B_neoth_mult": null,
     "B_neoth_mult_epsilon": null,
-    "B_neoth_mult_epsilon_rule": "0.01_median_DH_calibration"
+    "B_neoth_mult_epsilon_rule": "0.01_median_buffer_ratio_calibration"
   },
   "labels": {
     "collapse_within_5m": false,

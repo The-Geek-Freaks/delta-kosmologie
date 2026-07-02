@@ -46,17 +46,17 @@ Raw feature set:
 F = {C, K, M, A, V, D, H}
 ```
 
-Candidate Babel feature:
+Candidate Babel features (three defined forms):
 
-```text
-B_NEOTH = norm((C * K * M * A * V) / (D * H + epsilon))
-```
+| Form | Formula | Primary use |
+| --- | --- | --- |
+| `B_neoth_log` | `log(C)+log(K)+log(M)+log(A/D)+log(V/H)` | **Primary** — cross-instance pooling (natural log, no epsilon) |
+| `B_neoth_mult` | `norm((C×K×M) / ((D/A)×(H/V)+ε))` | Interpretability variant (requires pre-registered epsilon) |
+| `B_neoth_bottleneck` | `min(C,K,M,A,V) / max(D,H)` | Structural stress test |
 
-Alternative within-theory forms:
-
-- log-additive form,
-- saturated sigmoid form,
-- bottleneck form.
+`B_neoth_log` is the primary form for all pooled analyses.
+`B_neoth_mult` is the interpretability variant; epsilon MUST be pre-registered before data collection.
+`B_neoth_bottleneck` is the structural stress test form.
 
 ## Baselines
 

@@ -33,10 +33,18 @@ systems question:
 > coupling, convergence pressure, resource pressure, agent density, and
 > information velocity outrun semantic separation and redundancy?
 
-That question becomes testable through the Babel Index family:
+That question becomes testable through the Babel Index family.
+
+Primary form (cross-instance poolable, no epsilon):
 
 ```text
-B_d(t) = norm_d((C_d * K_d * M_d * A_d * V_d) / (D_d * H_d + epsilon))
+B_log = log(C) + log(K) + log(M) + log(A/D) + log(V/H)
+```
+
+Interpretability variant (multiplicative ratio form):
+
+```text
+B_mult = norm_d((C * K * M) / ((D/A) * (H/V) + epsilon))
 ```
 
 | Symbol | Meaning | NEOTH runtime proxy |
