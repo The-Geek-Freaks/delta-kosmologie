@@ -36,16 +36,21 @@ Non-goal:
 
 ## Outcome Labels
 
-`Y(t+h)` should be defined before evaluation. Candidate labels:
+`Y(t+h)` should be defined before evaluation. The authoritative label enum is
+defined in `schemas/neoth-babel-event.schema.json` (`collapse_label`). Always
+reference the schema as the canonical source; this list is a human-readable
+summary only.
 
-- agent loop,
-- retry storm,
-- tool timeout cascade,
-- tool selection failure,
-- context-limit crash,
-- answer degeneration under high context pressure,
-- fallback route failure,
-- task objective failure in a longitudinal agent run.
+| Schema value | Human label | Description |
+| --- | --- | --- |
+| `agent_loop` | Agent loop | Repeated state/action pattern without progress |
+| `retry_storm` | Retry storm | Abnormal retry density in a short window |
+| `tool_timeout_cascade` | Tool timeout cascade | Multiple dependent tool timeouts in one task graph |
+| `tool_selection_failure` | Tool selection failure | Wrong tool chosen; tool call rejected or inapplicable |
+| `context_limit_failure` | Context-limit crash | Truncation or crash at context boundary |
+| `semantic_degradation` | Answer degeneration | High self-similarity plus falling task score under context pressure |
+| `fallback_failure` | Fallback route failure | Primary route fails and fallback also fails or degrades objective |
+| `objective_failure` | Task objective failure | Task not completed under predefined success criteria in a longitudinal run |
 
 ## Evaluation Shape
 

@@ -44,7 +44,11 @@ institutions, markets, and LLM/agent runtimes.
 - Inner time is the ordering of stored or correlated differences inside an
   observing subsystem.
 - Causality is a stable inner projection of that order along a gradient.
-- Local order is not thermodynamically free.
+- Maintaining productive difference across system components requires information
+  processing capacity. Query-response cycles, context retention, and routing
+  decisions each consume finite resources. When resource pressure M_d exceeds
+  differentiation capacity D_d, productive difference cannot be maintained
+  regardless of initial configuration.
 - Major transitions often involve changes in information storage or
   transmission.
 - Babel is loss of productive difference through overcoupling or gradient
@@ -58,7 +62,7 @@ institutions, markets, and LLM/agent runtimes.
 | --- | --- | --- | --- |
 | Empirical instrument | Complexity science, OSS, LLMs, institutions | `B_d` and echo criteria beat strong baselines out of sample | No proof of Omega, Xi, or cosmic breath ontology |
 | Natural philosophy | RDelta, inner time, recursion, difference | Conceptual coherence and no physics category errors | No standalone empirical confirmation |
-| Cosmological test path | Xi shadow models, dark-energy signatures | Improvement over LambdaCDM, quintessence, modified gravity, and standard GR at finite parameter count | No validation from sociotechnical pilots |
+| Cosmological test path | **Planned future work — not a current scientific claim.** Xi shadow models and dark-energy signatures are named as the intended test path but are not specified in v1.0. No Xi model definition, dataset, or registered test statistic exists yet. Success criterion (when specified): improvement over LambdaCDM, quintessence, modified gravity, and standard GR at finite parameter count. Planned for ROADMAP v1.4. | No validation from sociotechnical pilots |
 
 ## RDelta
 
@@ -70,7 +74,15 @@ RDelta := <R, Delta | R becomes distinguishable through Delta,
 `R` is recursion, return, memory, iteration, or echo.  
 `Delta` is difference, distinction, boundary, or state separation.
 
-The framework treats them as co-conditions rather than as a hierarchy.
+The framework treats them as co-conditions rather than as a hierarchy. The
+co-condition is not a circular assertion: it is a compressed statement of a
+theorem derivable from a single axiom — "a distinction requires persistence,
+and persistence requires distinction." Distinction without persistence collapses
+to noise; persistence without distinction collapses to a constant. Neither pole
+is stable alone, so both are jointly minimal. The mutual dependence is a
+consequence, not a premise. Prior art: Bateson's "difference that makes a
+difference" (*Steps to an Ecology of Mind*, 1972) and Spencer-Brown's cross and
+re-entry operators (*Laws of Form*, 1969). Full derivation: `docs/foundations.md`.
 
 ## Babel Index Family
 
@@ -80,22 +92,30 @@ For a domain `d`:
 B_d = f_d(C_d, K_d, M_d, A_d, V_d, D_d, H_d)
 ```
 
-Candidate multiplicative form:
+Candidate multiplicative form (five independent factors):
 
 ```text
-B_d(t) = norm_d((C_d(t) * K_d(t) * M_d(t) * A_d(t) * V_d(t)) /
-                (D_d(t) * H_d(t) + epsilon))
+B_d(t) = norm_d((C_d(t) * K_d(t) * M_d(t)) /
+                ((D_d(t) / A_d(t)) * (H_d(t) / V_d(t)) + epsilon))
 ```
 
-| Symbol | Meaning |
-| --- | --- |
-| `C_d` | Coupling degree |
-| `K_d` | Coherence pressure / convergence pressure |
-| `M_d` | Competition, resource, or optimization pressure |
-| `A_d` | Autonomous actor or agent density |
-| `V_d` | Information velocity |
-| `D_d` | Differentiation capacity / semantic separability |
-| `H_d` | Heterarchy, redundancy, modularity |
+Agent density `A_d` and information velocity `V_d` appear as load/capacity
+ratios. An ensemble of independent specialised agents increases `A_d` while
+simultaneously increasing `D_d` and `H_d`; treating `A_d` as unconditionally
+risk-increasing would contradict this. The ratio `A_d / D_d` (agent density
+per unit of role differentiation) and `V_d / H_d` (velocity per unit of
+redundant capacity) make risk depend on load/capacity mismatch rather than load
+alone. See `protocols/babel-index.md` for the full derivation and log form.
+
+| Symbol | Meaning | Direction |
+| --- | --- | --- |
+| `C_d` | Coupling degree | Higher increases risk. |
+| `K_d` | Coherence pressure / convergence pressure | Higher increases risk. |
+| `M_d` | Competition, resource, or optimization pressure | Higher increases risk. |
+| `A_d` | Autonomous actor or agent density | Risk-increasing conditional on `D_d`. Use as `A_d / D_d`. |
+| `V_d` | Information velocity | Risk-increasing conditional on `H_d`. Use as `V_d / H_d`. |
+| `D_d` | Differentiation capacity / semantic separability | Higher buffers risk. |
+| `H_d` | Heterarchy, redundancy, modularity | Higher buffers risk. |
 
 `B_d` is not universal. A `B_LLM` score cannot be directly compared with a
 `B_OSS`, `B_market`, or `B_epoch` score without domain-specific calibration.
@@ -149,7 +169,8 @@ The multiplicative Babel form is not a magic term. Log-transformed, it is a
 log-linear special case with fixed signs and coefficients:
 
 ```text
-log B_mult ~= log C + log K + log M + log A + log V - log D - log H
+log B_mult ~= log C + log K + log M + log(A/D) + log(V/H)
+           = log C + log K + log M + log A - log D + log V - log H
 ```
 
 The correct question is not whether a zero-parameter index beats all flexible

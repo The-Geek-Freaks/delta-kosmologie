@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/The-Geek-Freaks/delta-kosmologie/schemas/neoth-babel-window.schema.json",
-  "title": "NEOTH Babel Rolling Window",
+  "$id": "https://github.com/The-Geek-Freaks/delta-kosmologie/schemas/babel-federation-window.schema.json",
+  "title": "Babel Federation Window",
+  "description": "Universal Babel-Index rolling window record for cross-instance research pooling. Runtime-agnostic; NEOTH is the v0 reference runtime. Replaces neoth-babel-window.schema.json v0.1.0.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -15,130 +16,192 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "const": "0.1.0"
+      "const": "neoth-babel-window/0.2.1"
     },
     "window": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "start",
-        "end",
-        "duration_seconds"
-      ],
+      "required": ["start", "end", "duration_seconds"],
       "properties": {
-        "start": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "end": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "duration_seconds": {
-          "type": "integer",
-          "minimum": 1
-        }
+        "start":            { "type": "string", "format": "date-time" },
+        "end":              { "type": "string", "format": "date-time" },
+        "duration_seconds": { "type": "integer", "minimum": 60,
+          "description": "Minimum 60 s to prevent re-identification via timing." },
+        "granularity_secs": { "type": "integer", "enum": [300, 900, 1800, 3600],
+          "description": "Window granularity: 300=5m (alert), 900=15m (primary), 1800=30m, 3600=60m (trend)." },
+        "prediction_horizon_seconds": { "type": "integer",
+          "description": "Look-ahead used when computing collapse labels. 900 = primary." }
       }
     },
     "system": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "runtime",
-        "repo"
-      ],
+      "required": ["runtime", "repo"],
       "properties": {
         "runtime": {
           "type": "string",
-          "const": "NEOTH"
+          "minLength": 1,
+          "description": "Runtime identifier. Recommended values: NEOTH, other registered runtime ids from metadata/registered-runtimes.yml."
+        },
+        "runtime_class": {
+          "type": "string",
+          "enum": ["llm-agent-orchestrator", "llm-benchmark", "llm-pipeline", "other"],
+          "description": "Runtime class for cross-runtime stratification in pooled analysis."
         },
         "repo": {
           "type": "string",
-          "format": "uri"
+          "description": "Owner/repo slug only (e.g., The-Geek-Freaks/NEOTH). No full URI."
         },
-        "runtime_version": {
-          "type": "string"
-        }
+        "runtime_version": { "type": "string" }
       }
     },
     "features": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "C",
-        "K",
-        "M",
-        "A",
-        "V",
-        "D",
-        "H"
-      ],
+      "required": ["C", "K", "M", "A", "V", "D", "H"],
       "properties": {
-        "C": {
-          "type": "number",
-          "minimum": 0
-        },
-        "K": {
-          "type": "number",
-          "minimum": 0
-        },
-        "M": {
-          "type": "number",
-          "minimum": 0
-        },
-        "A": {
-          "type": "number",
-          "minimum": 0
-        },
-        "V": {
-          "type": "number",
-          "minimum": 0
-        },
-        "D": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "H": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        }
+        "C": { "type": "number", "minimum": 0,
+          "description": "Coupling density: bipartite tool/agent edge density [0,1]." },
+        "K": { "type": "number", "minimum": 0,
+          "description": "Convergence pressure: mean pairwise output similarity [0,1]." },
+        "M": { "type": "number", "minimum": 0,
+          "description": "Resource pressure: max(context_ratio, vram_pct/100, budget_ratio) [0,1]." },
+        "A": { "type": "number", "minimum": 0,
+          "description": "Agent density: distinct dispatched agents / autonomy_scalar / 8 [0,1]." },
+        "V": { "type": "number", "minimum": 0,
+          "description": "Velocity: tokens_per_sec / V_MAX [0,1]." },
+        "D": { "type": "number", "exclusiveMinimum": 0,
+          "description": "Differentiation capacity (0,1]. v0: 1.0=no schema conflicts, 0.3=any conflict." },
+        "H": { "type": "number", "exclusiveMinimum": 0,
+          "description": "Heterarchy/redundancy (0,1]. H_structural is the primary input; H_empirical is a calibration check." }
+      }
+    },
+    "algorithm_versions": {
+      "type": "object",
+      "description": "Per-feature algorithm version strings. Enables between-version sensitivity analysis.",
+      "properties": {
+        "C": { "type": "string" },
+        "K": { "type": "string" },
+        "K_embedding_model": { "type": "string",
+          "description": "HuggingFace model ID used for K_d embeddings, if any." },
+        "M": { "type": "string" },
+        "A": { "type": "string" },
+        "V": { "type": "string" },
+        "D": { "type": "string" },
+        "H": { "type": "string" }
       }
     },
     "candidate_scores": {
       "type": "object",
-      "additionalProperties": {
-        "type": "number"
+      "description": "Domain-prefixed candidate score forms. Key naming convention: B_{domain}_{form}.",
+      "minProperties": 1,
+      "properties": {
+        "B_neoth_log": {
+          "type": ["number", "null"],
+          "description": "Primary form for cross-instance pooling: log(C)+log(K)+log(M)+log(A)+log(V)-log(D)-log(H). Null when any numerator=0."
+        },
+        "B_neoth_mult": {
+          "type": ["number", "null"],
+          "description": "Multiplicative form, normalised. Null when epsilon not yet calibrated."
+        },
+        "B_neoth_mult_epsilon": {
+          "type": ["number", "null"],
+          "description": "Epsilon value used for B_neoth_mult. Required when B_neoth_mult is non-null."
+        },
+        "B_neoth_mult_epsilon_rule": {
+          "type": "string",
+          "description": "Epsilon governance rule: '0.01_median_DH_calibration' for the reference implementation."
+        },
+        "B_neoth_bottleneck": {
+          "type": "number",
+          "description": "Bottleneck form: min(C,K,M,A,V) / max(D,H). No epsilon needed."
+        }
       },
-      "minProperties": 1
+      "additionalProperties": { "type": ["number", "string", "null"] }
     },
     "labels": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "collapse_within_5m",
-        "collapse_kind"
-      ],
+      "required": ["collapse_within_5m", "collapse_kind"],
       "properties": {
         "collapse_within_5m": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Primary operational label (secondary falsification horizon)."
+        },
+        "collapse_within_30m": {
+          "type": ["boolean", "null"],
+          "description": "Primary falsification label (30-minute horizon). Null when not yet computed."
+        },
+        "collapse_within_30m_kind": {
+          "type": ["string", "null"],
+          "enum": [null, "agent_loop", "retry_storm", "tool_timeout_cascade",
+                   "tool_selection_failure",
+                   "context_limit_failure", "fallback_failure", "semantic_degradation", "objective_failure"]
+        },
+        "collapse_at_next_task": {
+          "type": ["boolean", "null"],
+          "description": "Next-task-run horizon label. Null when not in a task-bounded evaluation."
+        },
+        "collapse_at_next_task_id": {
+          "type": ["string", "null"],
+          "description": "Pseudonymised task_id of the next task run."
         },
         "collapse_kind": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "enum": [
-            null,
-            "agent_loop",
-            "retry_storm",
-            "tool_timeout_cascade",
-            "context_limit_failure",
-            "fallback_failure",
-            "semantic_degradation",
-            "objective_failure"
-          ]
+          "type": ["string", "null"],
+          "enum": [null, "agent_loop", "retry_storm", "tool_timeout_cascade",
+                   "tool_selection_failure",
+                   "context_limit_failure", "fallback_failure", "semantic_degradation", "objective_failure"],
+          "description": "First firing collapse label for the primary horizon. Canonical enum — single source of truth. See neoth-babel-event.schema.json for the normative definition."
+        },
+        "negative_control": {
+          "type": "boolean",
+          "default": false,
+          "description": "True for deliberately stable runs where collapse is structurally impossible."
+        },
+        "negative_control_type": {
+          "type": ["string", "null"],
+          "enum": [null, "synthetic_stable", "isolated_run", "replay_deterministic"]
         }
       }
+    },
+    "submission_metadata": {
+      "type": "object",
+      "description": "Stratification metadata for pooled analysis. Required for v0.2, optional for v0.1 backward compat.",
+      "properties": {
+        "contributor_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256(local_secret_salt || repo_slug) — 64 hex chars. Pseudonymous, stable."
+        },
+        "deployment_context": {
+          "type": "string",
+          "enum": ["single-user", "multi-user", "ci", "benchmark"]
+        },
+        "hardware_tier": {
+          "type": "string",
+          "enum": ["laptop", "workstation", "server", "cloud-small", "cloud-large"]
+        },
+        "primary_model_family": {
+          "type": "string",
+          "description": "Provider+family coarsened: 'anthropic/claude-3'. No version suffix."
+        },
+        "avg_tasks_per_day_bucket": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "protocol_version": {
+          "type": "string",
+          "const": "neoth-federation/0.1.0"
+        },
+        "runtime_class": {
+          "type": "string",
+          "const": "llm-agent-orchestrator"
+        }
+      }
+    },
+    "pseudonymised_session_id": {
+      "type": "string",
+      "description": "HMAC-SHA256(local_salt, session_id) truncated to 16 hex chars."
     },
     "notes": {
       "type": "string"

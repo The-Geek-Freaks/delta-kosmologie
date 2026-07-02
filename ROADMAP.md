@@ -12,7 +12,7 @@
 ## v1.1 Protocol Hardening
 
 - [ ] Add negative-control examples.
-- [ ] Add epsilon governance note.
+- [x] Add epsilon governance note. (`protocols/babel-index.md` §Epsilon Governance — pre-hoc selection rule and log-form primary form specified.)
 - [ ] Add calibration worksheet.
 - [ ] Add window aggregation pseudocode.
 - [ ] Add baseline model checklist.
@@ -31,3 +31,17 @@
 - [ ] Run time-split evaluation.
 - [ ] Publish summary metrics.
 - [ ] Mark results as supported, inconclusive, or falsified for the NEOTH domain.
+
+## v1.4 Cosmological Test Path (preformal — not yet a scientific claim)
+
+- [ ] Define Xi as a parameterized correction to the matter power spectrum P(k)
+  with at least one free parameter, grounded in the RDelta co-condition.
+- [ ] Register dataset: Planck 2018 CMB + BOSS BAO (or successor).
+- [ ] Register test statistic: Bayes factor or ΔChi² at a specified k range,
+  pre-registered before any parameter fitting.
+- [ ] Implement comparison against LambdaCDM, quintessence, and modified gravity
+  at finite parameter count.
+- [ ] Publish Xi model specification in `docs/xi-model.md`.
+
+*This milestone is explicitly preformal and speculative. Nothing in v1.0–v1.3
+constitutes evidence for or against the cosmological claim.*

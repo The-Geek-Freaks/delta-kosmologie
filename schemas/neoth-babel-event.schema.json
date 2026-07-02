@@ -13,7 +13,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "const": "0.1.0"
+      "const": "0.1.1"
     },
     "timestamp": {
       "type": "string",
@@ -88,11 +88,13 @@
         "agent_loop",
         "retry_storm",
         "tool_timeout_cascade",
+        "tool_selection_failure",
         "context_limit_failure",
         "fallback_failure",
         "semantic_degradation",
         "objective_failure"
-      ]
+      ],
+      "description": "Canonical collapse label. Authoritative source — docs/neoth-integration.md references this enum."
     },
     "metrics": {
       "type": "object",
